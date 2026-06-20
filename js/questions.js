@@ -93,11 +93,11 @@ const QUESTIONS = [
   {
     id: "rr_001",
     category: "Rules of the Road",
-    question: "You are at an intersection with a stop sign. You should stop:",
+    question: "You are approaching an intersection with a STOP sign. Where should you stop?",
     options: [
-      "At the crosswalk or limit line, if one is present",
-      "50 feet before the intersection",
-      "Only if other vehicles are approaching"
+      "At the solid white limit line, crosswalk, or before entering the intersection",
+      "Far enough back so that you can see the traffic light",
+      "Only if other vehicles are already in the intersection"
     ],
     correctAnswer: 0,
     explanation: "You must stop at the limit line, crosswalk, or before entering the intersection — whichever comes first."
@@ -105,11 +105,11 @@ const QUESTIONS = [
   {
     id: "rr_002",
     category: "Rules of the Road",
-    question: "When two vehicles arrive at an uncontrolled intersection (no signs or signals) at the same time, who has the right of way?",
+    question: "You are arriving at an intersection with no signs or signals at the same time as another vehicle. Who has the right of way?",
     options: [
-      "The driver on the left",
-      "The driver on the right",
-      "The driver going straight"
+      "The driver of the vehicle on your left",
+      "The driver of the vehicle on your right",
+      "The driver of the vehicle going straight"
     ],
     correctAnswer: 1,
     explanation: "At an uncontrolled intersection, yield to the vehicle on your right."
@@ -117,11 +117,11 @@ const QUESTIONS = [
   {
     id: "rr_003",
     category: "Rules of the Road",
-    question: "You may legally make a U-turn:",
+    question: "In which of the following situations may you legally make a U-turn?",
     options: [
-      "Across a double yellow line",
-      "At a residential intersection with no sign prohibiting it, when no vehicles are approaching",
-      "On a one-way street"
+      "Across a set of double yellow lines on a highway",
+      "At a residential intersection where there is no sign prohibiting it, and no vehicles are approaching",
+      "On a one-way street, provided there is no oncoming traffic"
     ],
     correctAnswer: 1,
     explanation: "U-turns are legal at residential intersections when it is safe and there's no sign prohibiting it. You cannot make a U-turn across double yellow lines."
@@ -129,11 +129,11 @@ const QUESTIONS = [
   {
     id: "rr_004",
     category: "Rules of the Road",
-    question: "When you are merging onto the freeway, you should:",
+    question: "You are merging onto the freeway. You should:",
     options: [
-      "Stop and wait for a gap in traffic",
-      "Try to enter at or near the speed of freeway traffic",
-      "Always slow down and yield"
+      "Stop and wait for a clear gap in traffic before merging",
+      "Enter at or near the speed of freeway traffic",
+      "Drive slower than freeway traffic until you find an opening"
     ],
     correctAnswer: 1,
     explanation: "When entering a freeway, use the on-ramp to accelerate to or near the speed of freeway traffic, then merge safely."
@@ -143,9 +143,9 @@ const QUESTIONS = [
     category: "Rules of the Road",
     question: "A solid yellow line on your side of the center line means:",
     options: [
-      "Pass only when safe",
-      "Do not pass",
-      "Slow down"
+      "You may pass other vehicles if the road is clear",
+      "You may not cross the line to pass other vehicles",
+      "You must slow down and proceed with caution"
     ],
     correctAnswer: 1,
     explanation: "A solid yellow line on your side means you may not cross it to pass. A broken yellow line means passing is allowed when safe.",
@@ -154,11 +154,11 @@ const QUESTIONS = [
   {
     id: "rr_006",
     category: "Rules of the Road",
-    question: "You must turn on your headlights:",
+    question: "When are you required to turn on your vehicle's headlights?",
     options: [
-      "30 minutes after sunset to 30 minutes before sunrise",
-      "One hour after sunset to one hour before sunrise",
-      "Only when it is completely dark"
+      "30 minutes after sunset until 30 minutes before sunrise",
+      "One hour after sunset until one hour before sunrise",
+      "Only when driving in heavy rain or fog"
     ],
     correctAnswer: 0,
     explanation: "California law requires headlights from 30 minutes after sunset to 30 minutes before sunrise, and any time conditions prevent you from seeing 1,000 feet ahead."
@@ -166,11 +166,11 @@ const QUESTIONS = [
   {
     id: "rr_007",
     category: "Rules of the Road",
-    question: "When making a right turn, you should:",
+    question: "You are getting ready to make a right turn. You should:",
     options: [
-      "Swing wide to the left first",
-      "Begin and end in the lane closest to the right curb",
-      "Enter any available lane"
+      "Swing wide to the left to give yourself more turning room",
+      "Begin and end your turn in the lane closest to the right edge of the road",
+      "Move into the center lane before making the turn"
     ],
     correctAnswer: 1,
     explanation: "When turning right, begin and end in the lane nearest the right-hand curb."
@@ -178,11 +178,11 @@ const QUESTIONS = [
   {
     id: "rr_008",
     category: "Rules of the Road",
-    question: "When making a left turn from a two-way street onto a one-way street, you should:",
+    question: "When making a left turn from a two-way street onto a one-way street, you must:",
     options: [
-      "Begin from the right lane",
-      "Begin from the lane closest to the center divider",
-      "Stop in the middle of the intersection"
+      "Start your turn from the far right lane",
+      "Start your turn from the lane closest to the center divider",
+      "Pull into the intersection and wait for the light to turn red before completing the turn"
     ],
     correctAnswer: 1,
     explanation: "Left turns should begin from the lane closest to the center divider."
@@ -190,11 +190,11 @@ const QUESTIONS = [
   {
     id: "rr_009",
     category: "Rules of the Road",
-    question: "You may cross a double yellow line to:",
+    question: "Under which of the following circumstances may you cross a double yellow line?",
     options: [
-      "Pass a slow-moving vehicle",
-      "Turn into or out of a driveway or private road",
-      "Pass another vehicle when you think it is safe"
+      "To pass a slow-moving agricultural vehicle",
+      "To turn left into a driveway or private road",
+      "To pass another vehicle if you cannot see any oncoming traffic"
     ],
     correctAnswer: 1,
     explanation: "You may cross double yellow lines to turn into or out of a driveway, private road, or to make a U-turn where permitted."
@@ -202,11 +202,11 @@ const QUESTIONS = [
   {
     id: "rr_010",
     category: "Rules of the Road",
-    question: "When can you drive in a carpool (HOV) lane?",
+    question: "You are driving in a carpool (HOV) lane. This is legal only if:",
     options: [
-      "Anytime, if you are driving fast enough",
-      "When you have the minimum number of occupants posted on the sign or drive a qualifying vehicle",
-      "Only during rush hour"
+      "You are driving faster than the rest of the traffic",
+      "You have the minimum number of occupants posted on the sign, or drive a qualifying clean-air vehicle",
+      "You are traveling during designated off-peak hours"
     ],
     correctAnswer: 1,
     explanation: "HOV lanes require the minimum number of passengers shown on the posted sign, or a qualifying clean-air vehicle with the proper sticker.",
@@ -215,11 +215,11 @@ const QUESTIONS = [
   {
     id: "rr_011",
     category: "Rules of the Road",
-    question: "When approaching a railroad crossing, you should:",
+    question: "You are approaching a railroad crossing. You should:",
     options: [
-      "Speed up to cross quickly",
-      "Slow down, look, and listen for trains",
-      "Stop only if you see a train coming"
+      "Accelerate to cross the tracks quickly",
+      "Slow down, look in both directions, and listen for approaching trains",
+      "Stop completely, even if there are no warning lights flashing"
     ],
     correctAnswer: 1,
     explanation: "Always slow down, look both ways, and listen before crossing railroad tracks. Stop if warning signals are flashing."
@@ -227,11 +227,11 @@ const QUESTIONS = [
   {
     id: "rr_012",
     category: "Rules of the Road",
-    question: "To turn right on a red light, you must:",
+    question: "You are approaching an intersection and want to turn right on a red light. You must:",
     options: [
-      "Just slow down and proceed if no cars are coming",
-      "Come to a complete stop first, then proceed when safe and legal",
-      "Signal and turn immediately"
+      "Slow down and proceed through the turn if the road is clear",
+      "Come to a complete stop, yield to pedestrians and traffic, and proceed when safe",
+      "Wait until the light turns green before making the turn"
     ],
     correctAnswer: 1,
     explanation: "You must come to a full stop before turning right on red. Yield to pedestrians and cross traffic. Check for 'No Turn on Red' signs."
@@ -239,11 +239,11 @@ const QUESTIONS = [
   {
     id: "rr_013",
     category: "Rules of the Road",
-    question: "If you are in an intersection when a traffic signal turns red, you should:",
+    question: "You have entered an intersection, but the traffic signal turns red before you can cross completely. You should:",
     options: [
-      "Stop immediately",
-      "Back up to clear the intersection",
-      "Continue through the intersection carefully"
+      "Stop immediately where you are and wait for the green light",
+      "Put your vehicle in reverse and back out of the intersection",
+      "Continue through the intersection safely to clear it"
     ],
     correctAnswer: 2,
     explanation: "If you have already entered the intersection, clear it safely. Do not stop in the intersection or back up."
@@ -251,11 +251,11 @@ const QUESTIONS = [
   {
     id: "rr_014",
     category: "Rules of the Road",
-    question: "When a traffic signal light turns green, you should:",
+    question: "You are waiting at an intersection and the traffic signal light turns green. You should:",
     options: [
-      "Accelerate immediately",
-      "Wait for all traffic to clear the intersection before you go",
-      "Honk your horn and proceed"
+      "Accelerate immediately to keep traffic moving",
+      "Yield to any vehicles, bicycles, or pedestrians still in the intersection before proceeding",
+      "Sound your horn lightly to alert cross traffic"
     ],
     correctAnswer: 1,
     explanation: "When the light turns green, check the intersection for safety before proceeding. Other vehicles or pedestrians may still be clearing."
@@ -263,11 +263,11 @@ const QUESTIONS = [
   {
     id: "rr_015",
     category: "Rules of the Road",
-    question: "The 'basic speed law' says you should:",
+    question: "California's 'Basic Speed Law' means:",
     options: [
-      "Never drive faster than is safe for current conditions",
-      "Always drive at the posted speed limit",
-      "Drive faster than other traffic to avoid accidents"
+      "You should never drive faster than is safe for current conditions",
+      "You must always drive at the posted speed limit, regardless of weather",
+      "You may drive up to 10 mph over the speed limit to keep up with traffic flow"
     ],
     correctAnswer: 0,
     explanation: "California's Basic Speed Law states you should never drive faster than is safe for current conditions, regardless of the posted speed limit."
@@ -275,11 +275,11 @@ const QUESTIONS = [
   {
     id: "rr_016",
     category: "Rules of the Road",
-    question: "At a four-way stop, if two vehicles arrive at the same time, the right-of-way goes to:",
+    question: "You arrive at a four-way stop at the same time as another vehicle. Who has the right-of-way?",
     options: [
-      "The vehicle on the left",
-      "The vehicle on the right",
-      "The vehicle going faster"
+      "The driver of the vehicle on the left",
+      "The driver of the vehicle on the right",
+      "The driver who is traveling faster"
     ],
     correctAnswer: 1,
     explanation: "At a four-way stop, yield to the vehicle on your right when both arrive simultaneously."
@@ -287,11 +287,11 @@ const QUESTIONS = [
   {
     id: "rr_017",
     category: "Rules of the Road",
-    question: "When can you legally drive in the left lane on a multilane highway?",
+    question: "When are you permitted to drive in the far left lane of a multilane highway?",
     options: [
-      "At all times",
-      "When passing or turning left, or when the right lane is blocked",
-      "Only when driving at the speed limit"
+      "At all times, as long as you are driving at the speed limit",
+      "When passing another vehicle, turning left, or when the right lanes are blocked",
+      "Only when you are driving a carpool vehicle"
     ],
     correctAnswer: 1,
     explanation: "The left lane is primarily for passing and turning left. Slower traffic should keep right."
@@ -299,11 +299,11 @@ const QUESTIONS = [
   {
     id: "rr_018",
     category: "Rules of the Road",
-    question: "You should always yield the right-of-way to:",
+    question: "You are driving on a city street and see an emergency vehicle with flashing lights and sirens approaching from behind. You must:",
     options: [
-      "Larger vehicles",
-      "Emergency vehicles with sirens and flashing lights",
-      "Vehicles already on the freeway"
+      "Continue driving but move into the right lane",
+      "Pull to the right edge of the road and stop until it passes",
+      "Stop immediately in your current lane"
     ],
     correctAnswer: 1,
     explanation: "You must always yield to emergency vehicles using their sirens and flashing lights. Pull to the right and stop."
@@ -311,11 +311,11 @@ const QUESTIONS = [
   {
     id: "rr_019",
     category: "Rules of the Road",
-    question: "A white painted curb means:",
+    question: "You are looking for parking and see a white painted curb. This means:",
     options: [
-      "Loading zone for passengers or mail only",
-      "No parking at any time",
-      "Limited time parking"
+      "You may stop here only to load or unload passengers or mail",
+      "You may not park here at any time",
+      "You may park here for up to two hours"
     ],
     correctAnswer: 0,
     explanation: "White curb = passenger or mail loading/unloading only. Drivers must stay with the vehicle.",
@@ -324,11 +324,11 @@ const QUESTIONS = [
   {
     id: "rr_020",
     category: "Rules of the Road",
-    question: "What does a flashing red traffic signal mean?",
+    question: "You are approaching an intersection and the traffic signal is flashing red. What does this mean?",
     options: [
-      "Slow down and proceed with caution",
-      "Stop, then proceed when safe (treated as a stop sign)",
-      "Yield to traffic on your right"
+      "Slow down and proceed carefully through the intersection",
+      "Treat it as a stop sign: come to a complete stop, then proceed when safe",
+      "Yield to traffic coming from your right side"
     ],
     correctAnswer: 1,
     explanation: "A flashing red light means the same as a stop sign — stop completely and proceed when it is safe.",
@@ -341,11 +341,11 @@ const QUESTIONS = [
   {
     id: "ts_001",
     category: "Traffic Signs & Signals",
-    question: "What does this sign mean?",
+    question: "You see this red octagonal sign at an intersection. You must:",
     options: [
-      "Stop and wait for the light to change",
-      "Come to a complete stop, then proceed when safe",
-      "Slow down and proceed if the way is clear"
+      "Stop only if there is cross traffic approaching",
+      "Come to a complete stop at the limit line or crosswalk, then proceed when safe",
+      "Slow down to 5 mph before entering the intersection"
     ],
     correctAnswer: 1,
     explanation: "A STOP sign means you must come to a complete stop at the limit line, crosswalk, or before entering the intersection.",
@@ -354,11 +354,11 @@ const QUESTIONS = [
   {
     id: "ts_002",
     category: "Traffic Signs & Signals",
-    question: "What does this sign mean?",
+    question: "You are approaching an intersection and see this red and white triangular sign. What should you do?",
     options: [
-      "Stop for all traffic",
-      "Slow down and give the right-of-way to traffic on the intersecting road",
-      "Speed up to merge with traffic"
+      "Stop completely and wait for a gap in traffic before proceeding",
+      "Slow down and be ready to stop if necessary to let other vehicles or pedestrians cross",
+      "Maintain your speed because you have the right-of-way"
     ],
     correctAnswer: 1,
     explanation: "A YIELD sign means slow down and be ready to stop, giving right-of-way to vehicles and pedestrians in the intersection.",
@@ -367,11 +367,11 @@ const QUESTIONS = [
   {
     id: "ts_003",
     category: "Traffic Signs & Signals",
-    question: "What does this sign indicate?",
+    question: "You see this sign at the entrance to a freeway off-ramp. What does it indicate?",
     options: [
-      "Road closed ahead",
-      "Do not enter — wrong direction",
-      "One way street"
+      "The road ahead is closed for construction",
+      "You are going the wrong way and must not enter",
+      "Traffic moves in one direction only, and you may proceed"
     ],
     correctAnswer: 1,
     explanation: "DO NOT ENTER means you cannot drive in that direction. You will usually see this at freeway exit ramps.",
@@ -380,11 +380,11 @@ const QUESTIONS = [
   {
     id: "ts_004",
     category: "Traffic Signs & Signals",
-    question: "What does this sign mean?",
+    question: "If you see this red rectangular sign while driving, it means:",
     options: [
-      "Road ends ahead",
-      "Turn around immediately",
-      "You are going the wrong direction on a one-way road or freeway ramp"
+      "The paved road ends ahead",
+      "You should turn around when safe",
+      "You are traveling against traffic and must pull over and stop"
     ],
     correctAnswer: 2,
     explanation: "WRONG WAY means you are traveling against traffic. Stop immediately and safely turn around.",
@@ -393,11 +393,11 @@ const QUESTIONS = [
   {
     id: "ts_005",
     category: "Traffic Signs & Signals",
-    question: "A diamond-shaped yellow sign indicates:",
+    question: "A diamond-shaped yellow sign on the side of the road typically indicates:",
     options: [
-      "A regulatory requirement",
-      "A warning of potential hazards ahead",
-      "Directions to a destination"
+      "A law or regulation you must obey",
+      "A warning of a potential hazard or change in road conditions ahead",
+      "Information about nearby services, such as gas or hospitals"
     ],
     correctAnswer: 1,
     explanation: "Diamond-shaped yellow signs are warning signs that alert you to hazards, road conditions, or changes ahead."
@@ -405,11 +405,11 @@ const QUESTIONS = [
   {
     id: "ts_006",
     category: "Traffic Signs & Signals",
-    question: "What does this sign indicate?",
+    question: "You are approaching an intersection and see this sign. What does it prohibit?",
     options: [
-      "No parking zone",
-      "No U-turn allowed",
-      "No right turn allowed"
+      "Parking along the side of the road",
+      "Making a U-turn",
+      "Making a right turn on a red light"
     ],
     correctAnswer: 1,
     explanation: "This sign prohibits U-turns at this location.",
@@ -418,11 +418,11 @@ const QUESTIONS = [
   {
     id: "ts_007",
     category: "Traffic Signs & Signals",
-    question: "What does this sign warn about?",
+    question: "You see this circular yellow sign while driving. What does it warn you about?",
     options: [
-      "Airport ahead",
-      "Railroad crossing ahead",
-      "Road construction"
+      "There is an airport or low-flying aircraft ahead",
+      "You are approaching a railroad crossing",
+      "There is an active road construction zone ahead"
     ],
     correctAnswer: 1,
     explanation: "The RR crossbuck sign warns of a railroad crossing ahead. Slow down, look, and listen for trains.",
@@ -431,11 +431,11 @@ const QUESTIONS = [
   {
     id: "ts_008",
     category: "Traffic Signs & Signals",
-    question: "What does a flashing yellow traffic light mean?",
+    question: "You are approaching a traffic signal that is flashing yellow. What should you do?",
     options: [
-      "Stop and then proceed",
-      "Speed up to clear the intersection",
-      "Slow down and proceed with caution"
+      "Come to a complete stop and then proceed when it is safe",
+      "Accelerate to clear the intersection before the light turns red",
+      "Slow down and proceed carefully through the intersection"
     ],
     correctAnswer: 2,
     explanation: "A flashing yellow light means slow down and proceed with caution.",
@@ -444,11 +444,11 @@ const QUESTIONS = [
   {
     id: "ts_009",
     category: "Traffic Signs & Signals",
-    question: "What does a green arrow signal mean?",
+    question: "You are waiting in a left-turn lane, and the traffic signal shows a green arrow pointing left. This means:",
     options: [
-      "You may turn in the direction of the arrow after yielding to traffic",
-      "You may proceed carefully in the direction of the arrow — oncoming traffic has a red light",
-      "All directions are clear to proceed"
+      "You may turn left after yielding to oncoming traffic",
+      "You have a protected left turn; oncoming traffic is stopped by a red light",
+      "All traffic in the intersection must stop to let you turn"
     ],
     correctAnswer: 1,
     explanation: "A green arrow means you have a protected turn. Oncoming traffic is stopped. You may proceed in the direction of the arrow.",
@@ -457,11 +457,11 @@ const QUESTIONS = [
   {
     id: "ts_010",
     category: "Traffic Signs & Signals",
-    question: "What does this sign mean?",
+    question: "What does this yellow pentagon-shaped sign mean?",
     options: [
       "Watch for pedestrians crossing the road",
-      "School zone — children playing",
-      "Construction workers ahead"
+      "You are entering a school zone with children present",
+      "There is a marked crosswalk ahead"
     ],
     correctAnswer: 0,
     explanation: "This pedestrian crossing sign warns you to watch for pedestrians crossing the road.",
@@ -470,11 +470,11 @@ const QUESTIONS = [
   {
     id: "ts_011",
     category: "Traffic Signs & Signals",
-    question: "What does this orange sign indicate?",
+    question: "While driving on the highway, you encounter this orange sign. What does it indicate?",
     options: [
-      "School zone ahead",
-      "Construction or road work ahead",
-      "Detour required"
+      "A school zone is coming up",
+      "There is construction or road work ahead",
+      "You must take a mandatory detour"
     ],
     correctAnswer: 1,
     explanation: "Orange signs indicate construction zones. Slow down, watch for workers, and obey posted speed limits.",
@@ -483,11 +483,11 @@ const QUESTIONS = [
   {
     id: "ts_012",
     category: "Traffic Signs & Signals",
-    question: "What does this sign indicate?",
+    question: "You see this rectangular black and white sign. What does it tell you?",
     options: [
-      "Traffic moves in one direction only",
-      "Keep left at all times",
-      "No passing zone"
+      "Traffic on this road moves in one direction only",
+      "You must keep to the left side of the road",
+      "Passing other vehicles is not allowed"
     ],
     correctAnswer: 0,
     explanation: "A ONE WAY sign means traffic flows in only one direction on that road.",
@@ -496,11 +496,11 @@ const QUESTIONS = [
   {
     id: "ts_013",
     category: "Traffic Signs & Signals",
-    question: "What does this sign indicate?",
+    question: "You are approaching an intersection and see this sign. What are you prohibited from doing?",
     options: [
-      "Right turn only ahead",
-      "No left turn allowed",
-      "No parking on the left"
+      "Making a right turn",
+      "Making a left turn",
+      "Continuing straight through the intersection"
     ],
     correctAnswer: 1,
     explanation: "This sign prohibits left turns at this location.",
@@ -509,11 +509,11 @@ const QUESTIONS = [
   {
     id: "ts_014",
     category: "Traffic Signs & Signals",
-    question: "What does this sign warn about?",
+    question: "You are driving on a rural road and see this yellow warning sign. What does it mean?",
     options: [
-      "Road narrows",
-      "Road curves ahead",
-      "Turn around"
+      "The road will become narrower ahead",
+      "There is a curve in the road ahead",
+      "You must prepare to turn around"
     ],
     correctAnswer: 1,
     explanation: "This sign warns of a curve ahead. Slow down before the curve.",
@@ -522,11 +522,11 @@ const QUESTIONS = [
   {
     id: "ts_015",
     category: "Traffic Signs & Signals",
-    question: "A rectangular white sign with black lettering is a:",
+    question: "A rectangular white sign with black letters or symbols usually indicates:",
     options: [
-      "Warning sign",
-      "Regulatory sign (speed limit, keep right, etc.)",
-      "Guide sign"
+      "A warning about an upcoming hazard",
+      "A regulatory rule or law you must follow",
+      "Information about a nearby point of interest"
     ],
     correctAnswer: 1,
     explanation: "Rectangular white signs with black text are regulatory signs that tell you about laws and rules you must obey."
@@ -534,11 +534,11 @@ const QUESTIONS = [
   {
     id: "ts_016",
     category: "Traffic Signs & Signals",
-    question: "Green highway signs provide:",
+    question: "Green rectangular signs located above or alongside highways provide:",
     options: [
-      "Warning information about hazards",
-      "Distance and directional information",
-      "Speed limit information"
+      "Warning information about potential hazards",
+      "Distance, direction, and destination information",
+      "Current speed limit information"
     ],
     correctAnswer: 1,
     explanation: "Green signs are guide signs that provide information about distances, directions, and destinations."
@@ -546,11 +546,11 @@ const QUESTIONS = [
   {
     id: "ts_017",
     category: "Traffic Signs & Signals",
-    question: "What does this sign warn about?",
+    question: "You are driving and see this yellow warning sign. What does it tell you?",
     options: [
-      "Slippery road when wet — reduce speed",
-      "Winding road ahead",
-      "Steep grade ahead"
+      "The road surface may be slippery when it is wet",
+      "There is a series of sharp curves ahead",
+      "You are approaching a steep downhill grade"
     ],
     correctAnswer: 0,
     explanation: "This sign warns the road may be slippery when wet. Reduce your speed.",
@@ -559,11 +559,11 @@ const QUESTIONS = [
   {
     id: "ts_018",
     category: "Traffic Signs & Signals",
-    question: "What does this sign indicate?",
+    question: "You see this yellow sign while driving on a two-lane road. What does it indicate?",
     options: [
-      "Road ends ahead",
-      "Divided highway begins",
-      "Two separate roads merge"
+      "The paved portion of the road ends ahead",
+      "A divided highway begins ahead",
+      "Two separate roads are about to merge into one"
     ],
     correctAnswer: 1,
     explanation: "This sign indicates a divided highway begins ahead. Stay to the right of the divider.",
@@ -572,11 +572,11 @@ const QUESTIONS = [
   {
     id: "ts_019",
     category: "Traffic Signs & Signals",
-    question: "Blue roadside signs indicate:",
+    question: "Blue signs along the side of the highway typically provide information about:",
     options: [
-      "Construction zones",
-      "Services like gas, food, and hospitals",
-      "Regulatory rules"
+      "Upcoming construction zones",
+      "Motorist services like gas, food, and lodging",
+      "State and federal traffic regulations"
     ],
     correctAnswer: 1,
     explanation: "Blue signs indicate motorist services such as gas stations, food, lodging, and hospitals."
@@ -584,24 +584,23 @@ const QUESTIONS = [
   {
     id: "ts_020",
     category: "Traffic Signs & Signals",
-    question: "What does this sign warn about?",
+    question: "You are driving on a divided highway and see this yellow warning sign. What does it mean?",
     options: [
-      "Two-way traffic ahead",
-      "Divided highway ahead",
-      "Lane ends, merge left"
+      "You are approaching a section of road with two-way traffic",
+      "The highway you are on is about to become a divided highway",
+      "The lane you are in is ending, and you must merge left"
     ],
     correctAnswer: 0,
     explanation: "This sign warns that two-way traffic is ahead. Stay in your lane.",
     image: SIGN_SVGS.twoWayTraffic
   },
-
   // =========================================
-  // CATEGORY: Speed Laws (sl_001–sl_015)
+  // CATEGORY: Speed Laws (sl_001–sl_015): Speed Laws (sl_001–sl_015)
   // =========================================
   {
     id: "sl_001",
     category: "Speed Laws",
-    question: "The maximum speed limit on most California highways is:",
+    question: "You are driving on a California highway where there are no posted speed limits. What is the maximum speed limit?",
     options: [
       "55 mph",
       "65 mph",
@@ -613,7 +612,7 @@ const QUESTIONS = [
   {
     id: "sl_002",
     category: "Speed Laws",
-    question: "Unless otherwise posted, the speed limit in a residential area is:",
+    question: "You are driving through a residential neighborhood. Unless otherwise posted, the speed limit is:",
     options: [
       "20 mph",
       "25 mph",
@@ -625,11 +624,11 @@ const QUESTIONS = [
   {
     id: "sl_003",
     category: "Speed Laws",
-    question: "The speed limit near a school zone when children are present is:",
+    question: "You are driving near a school. Children are outside on the playground. What is the speed limit in this school zone?",
     options: [
       "15 mph",
       "20 mph",
-      "25 mph"
+      "25 mph unless otherwise posted"
     ],
     correctAnswer: 2,
     explanation: "The speed limit in a school zone when children are present is 25 mph, unless otherwise posted.",
@@ -638,7 +637,7 @@ const QUESTIONS = [
   {
     id: "sl_004",
     category: "Speed Laws",
-    question: "When towing another vehicle, your maximum speed on the freeway is:",
+    question: "You are towing a trailer on a freeway with four lanes in your direction. What is your maximum speed limit?",
     options: [
       "45 mph",
       "55 mph",
@@ -650,7 +649,7 @@ const QUESTIONS = [
   {
     id: "sl_005",
     category: "Speed Laws",
-    question: "The speed limit in an alley is:",
+    question: "You are driving through an alley. What is the speed limit?",
     options: [
       "10 mph",
       "15 mph",
@@ -662,7 +661,7 @@ const QUESTIONS = [
   {
     id: "sl_006",
     category: "Speed Laws",
-    question: "When approaching a blind intersection (where you cannot see for 100 feet in either direction in the last 100 feet), the speed limit is:",
+    question: "You are approaching an intersection where you cannot see traffic for 100 feet in either direction. What is the speed limit for this 'blind' intersection?",
     options: [
       "10 mph",
       "15 mph",
@@ -674,7 +673,7 @@ const QUESTIONS = [
   {
     id: "sl_007",
     category: "Speed Laws",
-    question: "On a two-lane undivided highway, the maximum speed limit is usually:",
+    question: "You are driving on a two-lane undivided highway. Unless otherwise posted, the maximum speed limit is:",
     options: [
       "45 mph",
       "55 mph",
@@ -686,23 +685,23 @@ const QUESTIONS = [
   {
     id: "sl_008",
     category: "Speed Laws",
-    question: "You should reduce your speed when:",
+    question: "You are driving on a road with a posted speed limit of 45 mph, but traffic is heavy and moving at 30 mph. You should:",
     options: [
-      "You are near pedestrians, bicyclists, or animals",
-      "The road is wide and clear",
-      "You are on the freeway"
+      "Drive 45 mph because it is the posted limit",
+      "Weave through traffic to maintain 45 mph",
+      "Drive no faster than 30 mph"
     ],
-    correctAnswer: 0,
-    explanation: "Reduce your speed near pedestrians, bicyclists, or any potential hazards."
+    correctAnswer: 2,
+    explanation: "California's Basic Speed Law requires you to drive at a speed that is safe for current conditions, regardless of the posted limit."
   },
   {
     id: "sl_009",
     category: "Speed Laws",
-    question: "When driving in fog, you should:",
+    question: "You are driving in dense fog. You should:",
     options: [
-      "Use your high beams",
-      "Drive at the speed limit",
-      "Slow down and use low beams"
+      "Turn on your high-beam headlights so you can see further ahead",
+      "Use your parking lights only",
+      "Slow down and use your low-beam headlights"
     ],
     correctAnswer: 2,
     explanation: "In fog, use low beam headlights (high beams reflect off fog and reduce visibility). Slow down."
@@ -710,19 +709,19 @@ const QUESTIONS = [
   {
     id: "sl_010",
     category: "Speed Laws",
-    question: "The speed limit in a construction zone is:",
+    question: "You enter a designated construction zone where workers are present. The speed limit is:",
     options: [
-      "Whatever is posted; fines are doubled in construction zones",
+      "Reduced by 10 mph automatically",
       "Always 25 mph",
-      "15 mph at all times"
+      "Whatever is posted; fines for traffic violations are doubled"
     ],
-    correctAnswer: 0,
+    correctAnswer: 2,
     explanation: "Obey posted speed limits in construction zones. Fines for speeding are typically doubled when workers are present."
   },
   {
     id: "sl_011",
     category: "Speed Laws",
-    question: "When approaching a railroad crossing with no warning signals, you should not exceed:",
+    question: "You are approaching a railroad crossing with no warning signals, and you cannot see the tracks for 400 feet in both directions. The speed limit is:",
     options: [
       "10 mph",
       "15 mph",
@@ -734,11 +733,11 @@ const QUESTIONS = [
   {
     id: "sl_012",
     category: "Speed Laws",
-    question: "Driving too slowly on a freeway can be:",
+    question: "You are driving 45 mph in a 65 mph zone in the far left lane. Traffic is backing up behind you. You could be cited for:",
     options: [
-      "A safe driving practice",
-      "Just as dangerous as driving too fast",
-      "Only a problem during rush hour"
+      "Nothing, because you are driving under the speed limit",
+      "Driving too slowly and blocking the normal flow of traffic",
+      "Reckless driving"
     ],
     correctAnswer: 1,
     explanation: "Driving too slowly on a freeway can be as dangerous as speeding because it disrupts traffic flow and can cause rear-end collisions."
@@ -746,23 +745,23 @@ const QUESTIONS = [
   {
     id: "sl_013",
     category: "Speed Laws",
-    question: "California's prima facie speed limit means:",
+    question: "California's 'prima facie' speed limit means:",
     options: [
-      "Speed limits that are assumed to be safe under normal conditions",
-      "The fastest you can ever drive",
-      "Speed limits that apply only to trucks"
+      "Speed limits that apply only to commercial vehicles",
+      "Speed limits that are assumed to be safe and reasonable under normal conditions",
+      "The absolute maximum speed you can drive on an empty highway"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Prima facie speed limits are assumed to be safe and reasonable under normal conditions but you must still reduce speed when conditions warrant."
   },
   {
     id: "sl_014",
     category: "Speed Laws",
-    question: "When exiting a freeway, you should slow down:",
+    question: "You want to exit the freeway. When should you begin to slow down?",
     options: [
-      "On the freeway before you reach the off-ramp",
-      "After you have moved onto the off-ramp",
-      "Only if the ramp is curved"
+      "About a half mile before your exit while still on the freeway",
+      "Only after you have moved completely onto the exit ramp",
+      "When you can see the end of the exit ramp"
     ],
     correctAnswer: 1,
     explanation: "Do not slow down on the freeway itself. Wait until you are on the off-ramp to reduce your speed."
@@ -770,14 +769,14 @@ const QUESTIONS = [
   {
     id: "sl_015",
     category: "Speed Laws",
-    question: "Some freeways have posted speed limits of 70 mph. When is it illegal to drive 70 mph on these freeways?",
+    question: "You are driving on a freeway posted for 70 mph. Traffic is moving at 80 mph. You should drive:",
     options: [
-      "Only at night",
-      "When conditions make 70 mph unsafe, even though it's posted",
-      "It is always legal if the sign says 70"
+      "80 mph to keep up with the flow of traffic",
+      "70 mph or less",
+      "Between 70 mph and 80 mph"
     ],
     correctAnswer: 1,
-    explanation: "Under the Basic Speed Law, you must never drive faster than is safe, regardless of the posted limit."
+    explanation: "You may never legally drive faster than the posted speed limit, even if the rest of traffic is speeding."
   },
 
   // =========================================
@@ -786,11 +785,11 @@ const QUESTIONS = [
   {
     id: "sd_001",
     category: "Safe Driving",
-    question: "The recommended following distance behind the car in front of you is:",
+    question: "To avoid rear-ending the vehicle in front of you, you should use the 'three-second rule.' This means:",
     options: [
-      "One car length for every 10 mph",
-      "At least three seconds",
-      "About 50 feet"
+      "You should look three seconds ahead down the road",
+      "It should take you three seconds to pass a fixed object after the car ahead of you passes it",
+      "You should wait three seconds before accelerating when a light turns green"
     ],
     correctAnswer: 1,
     explanation: "Use the 3-second rule: pick a fixed point ahead, and when the car in front passes it, count 3 seconds before you reach it."
@@ -798,47 +797,47 @@ const QUESTIONS = [
   {
     id: "sd_002",
     category: "Safe Driving",
-    question: "If you want to change lanes, you should:",
+    question: "You want to change lanes. You must check your mirrors and:",
     options: [
-      "Signal, check mirrors, look over your shoulder (blind spot check), then move",
-      "Just check your mirrors and go",
-      "Signal and move immediately"
+      "Slow down before moving into the new lane",
+      "Look over your shoulder to check your blind spot",
+      "Flash your headlights to warn other drivers"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Always signal, check mirrors, AND look over your shoulder to check blind spots before changing lanes."
   },
   {
     id: "sd_003",
     category: "Safe Driving",
-    question: "You should increase your following distance when:",
+    question: "In which of the following scenarios should you increase your following distance beyond the normal three seconds?",
     options: [
-      "Driving in good weather on a dry road",
-      "Following a motorcycle, large truck, or in bad weather",
-      "The traffic is light"
+      "When you are driving on a multi-lane highway in light traffic",
+      "When you are being tailgated by another vehicle",
+      "When you are following a small passenger car"
     ],
     correctAnswer: 1,
-    explanation: "Increase following distance when behind motorcycles, large trucks, or in bad weather/poor road conditions."
+    explanation: "If you are being tailgated, increase your following distance ahead of you so you have more room to stop gradually without being rear-ended."
   },
   {
     id: "sd_004",
     category: "Safe Driving",
-    question: "When a large truck or bus is making a right turn, it may:",
+    question: "You are driving next to a large commercial truck. You should remember that large trucks:",
     options: [
-      "Move into the left lane to complete the turn",
-      "Swing wide to the left before turning right",
-      "Always stay in the right lane"
+      "Can stop much faster than passenger vehicles",
+      "Have larger blind spots than passenger vehicles",
+      "Are required to drive in the far left lane"
     ],
     correctAnswer: 1,
-    explanation: "Large vehicles need extra room to turn. They may swing left before turning right. Never squeeze between a turning truck and the curb."
+    explanation: "Large vehicles have extensive blind spots (No-Zones). If you can't see the driver in their side mirror, they can't see you."
   },
   {
     id: "sd_005",
     category: "Safe Driving",
-    question: "The most common cause of traffic collisions is:",
+    question: "According to the DMV, the most common cause of traffic collisions is:",
     options: [
-      "Bad weather",
-      "Mechanical failure",
-      "Driver error (distracted driving, speeding, etc.)"
+      "Poor weather conditions and slippery roads",
+      "Mechanical failure such as blown tires or bad brakes",
+      "Driver error, such as distracted driving or speeding"
     ],
     correctAnswer: 2,
     explanation: "The vast majority of crashes are caused by driver error — distraction, speeding, impairment, or failure to follow rules."
@@ -846,35 +845,35 @@ const QUESTIONS = [
   {
     id: "sd_006",
     category: "Safe Driving",
-    question: "When driving near parked cars, you should watch for:",
+    question: "You are driving on a city street next to a row of parked cars. You should:",
     options: [
-      "Car doors opening and pedestrians stepping out",
-      "Pets sitting in the cars",
-      "Expired parking meters"
+      "Drive closely to the parked cars to stay out of the oncoming lane",
+      "Watch for car doors opening and pedestrians stepping out from between the cars",
+      "Honk your horn at every intersection"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Watch for car doors opening suddenly and pedestrians stepping out from between parked cars."
   },
   {
     id: "sd_007",
     category: "Safe Driving",
-    question: "If you are being tailgated, you should:",
+    question: "A vehicle is tailgating you (following too closely). You should:",
     options: [
-      "Speed up to increase distance",
-      "Brake suddenly to warn the tailgater",
-      "Change lanes or increase the distance between you and the car ahead of you"
+      "Tap your brakes lightly to warn the driver to back off",
+      "Speed up to create more distance between you and the tailgater",
+      "Change lanes, or slow down gradually to encourage them to pass"
     ],
     correctAnswer: 2,
-    explanation: "If tailgated, safely change lanes if possible, or increase your following distance from the vehicle ahead to give yourself more braking room."
+    explanation: "If tailgated, safely change lanes if possible, or slow down gradually to allow them to pass or give yourself more braking room."
   },
   {
     id: "sd_008",
     category: "Safe Driving",
-    question: "You should always look over your shoulder before:",
+    question: "You must carefully check your blind spots by looking over your shoulder before you:",
     options: [
-      "Applying the brakes",
-      "Changing lanes, merging, or backing up",
-      "Turning on the radio"
+      "Enter an intersection on a green light",
+      "Change lanes, merge onto a freeway, or pull away from a curb",
+      "Slow down to park parallel to the curb"
     ],
     correctAnswer: 1,
     explanation: "Always check your blind spots by looking over your shoulder before changing lanes, merging, or backing up."
@@ -882,11 +881,11 @@ const QUESTIONS = [
   {
     id: "sd_009",
     category: "Safe Driving",
-    question: "When you park on a hill facing downhill with a curb, you should turn your wheels:",
+    question: "You park your vehicle on a hill facing downhill. The street has a curb. How should you turn your wheels?",
     options: [
-      "Away from the curb (to the left)",
-      "Toward the curb (to the right)",
-      "Keep them straight"
+      "Turn your front wheels away from the curb",
+      "Turn your front wheels toward the curb",
+      "Keep your front wheels perfectly straight"
     ],
     correctAnswer: 1,
     explanation: "Facing downhill with a curb: turn wheels toward the curb so the car rolls into the curb if brakes fail."
@@ -894,23 +893,23 @@ const QUESTIONS = [
   {
     id: "sd_010",
     category: "Safe Driving",
-    question: "When you park on a hill facing uphill with a curb, you should turn your wheels:",
+    question: "You park your vehicle on a hill facing uphill. The street has a curb. How should you turn your wheels?",
     options: [
-      "Toward the curb (to the right)",
-      "Away from the curb (to the left)",
-      "Keep them straight"
+      "Turn your front wheels toward the curb",
+      "Turn your front wheels away from the curb",
+      "Keep your front wheels perfectly straight"
     ],
     correctAnswer: 1,
-    explanation: "Facing uphill with a curb: turn wheels away from the curb so the car rolls into the curb if brakes fail."
+    explanation: "Facing uphill with a curb: turn wheels away from the curb (left) so the car rolls back into the curb if brakes fail."
   },
   {
     id: "sd_011",
     category: "Safe Driving",
-    question: "When parked on a hill with no curb, you should turn your wheels:",
+    question: "You park on a hill that does not have a curb. How should you turn your wheels?",
     options: [
-      "To the right (toward the shoulder of the road)",
-      "To the left",
-      "Keep them straight"
+      "Turn your wheels toward the edge of the road (right)",
+      "Turn your wheels away from the edge of the road (left)",
+      "Keep your wheels straight"
     ],
     correctAnswer: 0,
     explanation: "No curb present: always turn wheels toward the right (shoulder) so the car doesn't roll into traffic."
@@ -918,11 +917,11 @@ const QUESTIONS = [
   {
     id: "sd_012",
     category: "Safe Driving",
-    question: "When backing up, you should:",
+    question: "You are backing up your vehicle. You should:",
     options: [
-      "Rely on your mirrors only",
-      "Turn and look over your right shoulder through the rear window",
-      "Only use the rearview camera"
+      "Rely entirely on your rearview and side mirrors",
+      "Turn your head and look over your right shoulder out the rear window",
+      "Use your backup camera exclusively"
     ],
     correctAnswer: 1,
     explanation: "When backing up, turn your head and look through the rear window. Don't rely solely on mirrors or cameras."
@@ -930,23 +929,23 @@ const QUESTIONS = [
   {
     id: "sd_013",
     category: "Safe Driving",
-    question: "You should use your horn:",
+    question: "When is it appropriate to use your vehicle's horn?",
     options: [
-      "To express frustration at other drivers",
-      "To warn others who may not see you to avoid a collision",
-      "Whenever you want someone to move faster"
+      "To express anger at a driver who cut you off",
+      "To warn other drivers to avoid an imminent collision",
+      "To alert a bicyclist that you are passing them"
     ],
     correctAnswer: 1,
-    explanation: "Use your horn only as a safety warning to avoid collisions. Do not use it to express anger."
+    explanation: "Use your horn only as a safety warning to avoid collisions. Do not use it to express anger or to startle bicyclists."
   },
   {
     id: "sd_014",
     category: "Safe Driving",
-    question: "Hydroplaning is most likely to occur when:",
+    question: "When is the road most slippery and likely to cause hydroplaning?",
     options: [
-      "The road is very cold and icy",
-      "During the first rain after a long dry spell",
-      "On a gravel road"
+      "During a heavy, continuous downpour lasting several hours",
+      "During the first few minutes of rain after a long dry spell",
+      "When driving on a freshly paved asphalt road"
     ],
     correctAnswer: 1,
     explanation: "Hydroplaning is most dangerous during the first rain after a dry period when oil and dust on the road mix with water."
@@ -954,11 +953,11 @@ const QUESTIONS = [
   {
     id: "sd_015",
     category: "Safe Driving",
-    question: "Before changing lanes on a freeway, you should:",
+    question: "You are driving on a freeway and want to move into the adjacent lane. You must:",
     options: [
-      "Signal and check your mirrors only",
-      "Check traffic using mirrors, signal, glance over your shoulder to check blind spots, then merge",
-      "Speed up first, then change lanes"
+      "Signal and check your mirrors before moving over",
+      "Check your mirrors, signal, look over your shoulder, and move when safe",
+      "Accelerate to pass the vehicle next to you, then change lanes"
     ],
     correctAnswer: 1,
     explanation: "Always use the full procedure: check mirrors, signal, check blind spots (shoulder check), then merge when safe."
@@ -966,23 +965,23 @@ const QUESTIONS = [
   {
     id: "sd_016",
     category: "Safe Driving",
-    question: "It is against the law to use a handheld cell phone while driving:",
+    question: "Under California law, it is illegal to use a handheld cell phone while driving:",
     options: [
-      "Only for drivers under 18",
-      "For all drivers, regardless of age",
-      "Only in school zones"
+      "Unless you are stopped at a red traffic light",
+      "Only if you are under 18 years of age",
+      "At all times, for all drivers, regardless of age"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     explanation: "California law prohibits all drivers from using handheld cell phones while driving. Hands-free is required."
   },
   {
     id: "sd_017",
     category: "Safe Driving",
-    question: "When driving at night, you should:",
+    question: "You are driving at night on a dimly lit street. You should:",
     options: [
-      "Always use your high beams",
-      "Make sure you can stop within the distance illuminated by your headlights",
-      "Drive at the posted speed limit regardless of visibility"
+      "Always use your high-beam headlights to see further",
+      "Drive slow enough so you can stop within the distance illuminated by your headlights",
+      "Use your hazard lights so other drivers can see you"
     ],
     correctAnswer: 1,
     explanation: "At night, reduce speed so you can stop within the distance your headlights illuminate."
@@ -990,14 +989,14 @@ const QUESTIONS = [
   {
     id: "sd_018",
     category: "Safe Driving",
-    question: "A driver who is overtaking your vehicle on the left should be given:",
+    question: "Another driver is trying to pass you on a two-lane road. You should:",
     options: [
-      "A warning honk",
-      "The right half of the road",
-      "A signal to slow down"
+      "Speed up slightly so they can tuck in behind you",
+      "Maintain your lane position and do not increase your speed",
+      "Honk your horn to warn them it is unsafe"
     ],
     correctAnswer: 1,
-    explanation: "When being passed, move to the right side of your lane and maintain your speed. Do not speed up."
+    explanation: "When being passed, move slightly to the right side of your lane if safe, and maintain your speed. Do not speed up."
   },
 
   // =========================================
