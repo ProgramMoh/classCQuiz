@@ -19,71 +19,39 @@ const CATEGORIES = [
 
 // SVG road sign generators for visual questions
 const SIGN_SVGS = {
-  stop: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 100,25 115,60 100,95 60,115 20,95 5,60 20,25" fill="#CC0000" stroke="#fff" stroke-width="4"/><text x="60" y="68" text-anchor="middle" fill="#fff" font-size="24" font-weight="bold" font-family="Arial">STOP</text></svg>`,
-  
-  yield: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,10 110,110 10,110" fill="#fff" stroke="#CC0000" stroke-width="6"/><text x="60" y="85" text-anchor="middle" fill="#CC0000" font-size="18" font-weight="bold" font-family="Arial">YIELD</text></svg>`,
-  
-  doNotEnter: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="55" fill="#CC0000" stroke="#fff" stroke-width="4"/><rect x="20" y="48" width="80" height="24" rx="3" fill="#fff"/><text x="60" y="40" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial">DO NOT</text><text x="60" y="90" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial">ENTER</text></svg>`,
-  
-  wrongWay: `<svg viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="136" height="46" rx="5" fill="#CC0000" stroke="#fff" stroke-width="3"/><text x="70" y="33" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold" font-family="Arial">WRONG WAY</text></svg>`,
-  
-  speedLimit: (speed) => `<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="120" rx="5" fill="#fff" stroke="#000" stroke-width="4"/><text x="50" y="30" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">SPEED</text><text x="50" y="45" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">LIMIT</text><text x="50" y="95" text-anchor="middle" fill="#000" font-size="48" font-weight="bold" font-family="Arial">${speed}</text></svg>`,
-  
-  schoolZone: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><text x="60" y="65" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">SCHOOL</text><text x="60" y="80" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">ZONE</text><text x="60" y="100" text-anchor="middle" fill="#000" font-size="9" font-family="Arial">25 MPH</text></svg>`,
-  
-  noUTurn: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="55" fill="#fff" stroke="#CC0000" stroke-width="5"/><path d="M45,80 L45,45 Q45,30 60,30 Q75,30 75,45 L75,60" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/><polygon points="68,55 82,55 75,68" fill="#000"/><line x1="20" y1="100" x2="100" y2="20" stroke="#CC0000" stroke-width="6"/></svg>`,
-  
-  railroadCrossing: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="55" fill="#FFD700" stroke="#000" stroke-width="3"/><line x1="30" y1="30" x2="90" y2="90" stroke="#000" stroke-width="10"/><line x1="90" y1="30" x2="30" y2="90" stroke="#000" stroke-width="10"/><text x="60" y="30" text-anchor="middle" fill="#000" font-size="22" font-weight="bold" font-family="Arial">R</text><text x="30" y="67" text-anchor="middle" fill="#000" font-size="22" font-weight="bold" font-family="Arial">R</text><text x="90" y="67" text-anchor="middle" fill="#000" font-size="22" font-weight="bold" font-family="Arial">R</text><text x="60" y="105" text-anchor="middle" fill="#000" font-size="22" font-weight="bold" font-family="Arial">R</text></svg>`,
-  
-  pedestrianCrossing: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><circle cx="60" cy="40" r="7" fill="#000"/><line x1="60" y1="47" x2="60" y2="75" stroke="#000" stroke-width="4"/><line x1="60" y1="55" x2="45" y2="65" stroke="#000" stroke-width="3"/><line x1="60" y1="55" x2="75" y2="65" stroke="#000" stroke-width="3"/><line x1="60" y1="75" x2="48" y2="95" stroke="#000" stroke-width="3"/><line x1="60" y1="75" x2="72" y2="95" stroke="#000" stroke-width="3"/></svg>`,
-  
-  mergeRight: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><path d="M60,30 L60,70 Q60,85 75,90" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/><path d="M45,90 L60,30 L60,90" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/></svg>`,
-  
-  curveAhead: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><path d="M50,95 L50,55 Q50,35 70,35 L80,35" fill="none" stroke="#000" stroke-width="6" stroke-linecap="round"/><polygon points="75,25 90,35 75,45" fill="#000"/></svg>`,
-  
-  construction: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FF8C00" stroke="#000" stroke-width="3"/><text x="60" y="70" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">ROAD</text><text x="60" y="85" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">WORK</text><text x="60" y="100" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">AHEAD</text></svg>`,
-  
-  oneWay: `<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="156" height="46" rx="3" fill="#000" stroke="#fff" stroke-width="3"/><text x="80" y="22" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial">ONE WAY</text><polygon points="120,10 150,25 120,40" fill="#fff"/></svg>`,
-  
-  noLeftTurn: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="55" fill="#fff" stroke="#CC0000" stroke-width="5"/><path d="M75,80 L75,50 Q75,35 60,35 Q45,35 45,50 L45,55" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/><polygon points="38,50 52,50 45,38" fill="#000"/><line x1="20" y1="100" x2="100" y2="20" stroke="#CC0000" stroke-width="6"/></svg>`,
-  
+  stop: `<img src="images/signs/stop.png" alt="Stop Sign" class="sign-image" />`,
+  yield: `<img src="images/signs/yield.png" alt="Yield Sign" class="sign-image" />`,
+  doNotEnter: `<img src="images/signs/doNotEnter.png" alt="Do Not Enter Sign" class="sign-image" />`,
+  wrongWay: `<img src="images/signs/wrongWay.png" alt="Wrong Way Sign" class="sign-image" />`,
+  speedLimit: (speed) => `<img src="images/signs/speedLimit.png" alt="Speed Limit ${speed}" class="sign-image" />`,
+  schoolZone: `<img src="images/signs/schoolZone.png" alt="School Zone Sign" class="sign-image" />`,
+  noUTurn: `<img src="images/signs/noUTurn.png" alt="No U-Turn Sign" class="sign-image" />`,
+  railroadCrossing: `<img src="images/signs/railroad.png" alt="Railroad Crossing Sign" class="sign-image" />`,
+  pedestrianCrossing: `<img src="images/signs/pedestrian.png" alt="Pedestrian Crossing Sign" class="sign-image" />`,
+  mergeRight: `<img src="images/signs/merge.png" alt="Merge Right Sign" class="sign-image" />`,
+  curveAhead: `<img src="images/signs/curve.png" alt="Curve Ahead Sign" class="sign-image" />`,
+  construction: `<img src="images/signs/construction.png" alt="Construction Zone Sign" class="sign-image" />`,
+  oneWay: `<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="156" height="46" rx="3" fill="#000" stroke="#fff" stroke-width="3"/><text x="80" y="22" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="Arial">ONE WAY</text><polygon points="120,10 150,25 120,40" fill="#fff"/></svg>`, // Keep as SVG since it wasn't fetched
+  noLeftTurn: `<img src="images/signs/noLeftTurn.png" alt="No Left Turn Sign" class="sign-image" />`,
   keepRight: `<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="110" rx="5" fill="#fff" stroke="#000" stroke-width="3"/><text x="50" y="35" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">KEEP</text><text x="50" y="55" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">RIGHT</text><polygon points="50,65 65,90 35,90" fill="#000"/><line x1="65" y1="77" x2="65" y2="100" stroke="#000" stroke-width="3"/></svg>`,
-  
   sharedLaneBikes: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><text x="60" y="55" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">SHARE</text><text x="60" y="70" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">THE</text><text x="60" y="85" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">ROAD</text></svg>`,
-  
   slipperyWhenWet: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><path d="M45,90 Q55,60 55,55 Q55,45 65,50 Q70,55 65,65 Q60,75 75,95" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round"/></svg>`,
-  
   dividedHighway: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><rect x="56" y="35" width="8" height="55" rx="2" fill="#000"/><polygon points="40,75 55,45 55,75" fill="#000"/><polygon points="80,75 65,45 65,75" fill="#000"/></svg>`,
-  
   twoWayTraffic: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><polygon points="45,55 45,95 38,95 50,105 62,95 55,95 55,55" fill="#000"/><polygon points="65,65 65,30 58,30 70,20 82,30 75,30 75,65" fill="#000"/></svg>`,
-  
-  stopAheadSign: `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><polygon points="60,5 115,115 5,115" fill="#FFD700" stroke="#000" stroke-width="3"/><text x="60" y="55" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">STOP</text><text x="60" y="75" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">AHEAD</text></svg>`,
-  
-  handicapped: `<svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="96" height="36" rx="3" fill="#0066CC" stroke="#fff" stroke-width="2"/><circle cx="30" cy="12" r="4" fill="#fff"/><path d="M30,16 L30,28 M25,22 L35,22 M30,28 L25,34 M30,28 L35,34" stroke="#fff" stroke-width="2" fill="none"/><text x="60" y="26" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="Arial">♿</text></svg>`,
-  
+  stopAheadSign: `<img src="images/signs/stopAhead.png" alt="Stop Ahead Sign" class="sign-image" />`,
+  handicapped: `<img src="images/signs/handicapped.png" alt="Handicapped Parking Sign" class="sign-image" />`,
   redCurb: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="30" width="150" height="25" rx="3" fill="#CC0000"/><text x="80" y="48" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial">RED CURB</text><text x="80" y="22" text-anchor="middle" fill="#666" font-size="11" font-family="Arial">No stopping, standing, or parking</text></svg>`,
-  
   yellowCurb: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="30" width="150" height="25" rx="3" fill="#FFD700"/><text x="80" y="48" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">YELLOW CURB</text><text x="80" y="22" text-anchor="middle" fill="#666" font-size="11" font-family="Arial">Loading / unloading only</text></svg>`,
-  
   greenCurb: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="30" width="150" height="25" rx="3" fill="#228B22"/><text x="80" y="48" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial">GREEN CURB</text><text x="80" y="22" text-anchor="middle" fill="#666" font-size="11" font-family="Arial">Limited time parking</text></svg>`,
-  
   whiteCurb: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="30" width="150" height="25" rx="3" fill="#fff" stroke="#ccc" stroke-width="2"/><text x="80" y="48" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">WHITE CURB</text><text x="80" y="22" text-anchor="middle" fill="#666" font-size="11" font-family="Arial">Passenger loading only</text></svg>`,
-  
   blueCurb: `<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="30" width="150" height="25" rx="3" fill="#0066CC"/><text x="80" y="48" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold" font-family="Arial">BLUE CURB</text><text x="80" y="22" text-anchor="middle" fill="#666" font-size="11" font-family="Arial">Disabled parking only</text></svg>`,
-  
-  flashing_red: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#CC0000"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle><circle cx="30" cy="75" r="18" fill="#444"/><circle cx="30" cy="115" r="18" fill="#444"/></svg>`,
-  
-  flashing_yellow: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#444"/><circle cx="30" cy="75" r="18" fill="#FFD700"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle><circle cx="30" cy="115" r="18" fill="#444"/></svg>`,
-  
-  greenArrow: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#444"/><circle cx="30" cy="75" r="18" fill="#444"/><circle cx="30" cy="115" r="18" fill="#228B22"/><polygon points="15,115 30,105 30,110 43,110 43,120 30,120 30,125" fill="#fff"/></svg>`,
-  
+  flashing_red: `<img src="images/signs/flashingRed.png" alt="Flashing Red Light" class="sign-image" />`,
+  flashing_yellow: `<img src="images/signs/flashingYellow.png" alt="Flashing Yellow Light" class="sign-image" />`,
+  greenArrow: `<img src="images/signs/greenArrow.png" alt="Green Arrow Light" class="sign-image" />`,
   solidYellowLines: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="100" fill="#555"/><line x1="0" y1="48" x2="200" y2="48" stroke="#FFD700" stroke-width="4"/><line x1="0" y1="56" x2="200" y2="56" stroke="#FFD700" stroke-width="4"/><text x="100" y="30" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial">← Opposite traffic →</text><text x="100" y="85" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial">← Opposite traffic →</text></svg>`,
-  
   brokenYellowLine: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="100" fill="#555"/><line x1="0" y1="48" x2="200" y2="48" stroke="#FFD700" stroke-width="4"/><line x1="0" y1="56" x2="30" y2="56" stroke="#FFD700" stroke-width="4" stroke-dasharray="20,10"/><line x1="30" y1="56" x2="200" y2="56" stroke="#FFD700" stroke-width="4" stroke-dasharray="20,10"/></svg>`,
-  
-  schoolBus: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="20" width="140" height="60" rx="8" fill="#FFD700" stroke="#000" stroke-width="2"/><rect x="40" y="30" width="25" height="20" rx="3" fill="#AAE"/><rect x="75" y="30" width="25" height="20" rx="3" fill="#AAE"/><rect x="110" y="30" width="25" height="20" rx="3" fill="#AAE"/><text x="100" y="72" text-anchor="middle" fill="#000" font-size="12" font-weight="bold" font-family="Arial">SCHOOL BUS</text><circle cx="55" cy="85" r="10" fill="#333"/><circle cx="145" cy="85" r="10" fill="#333"/><circle cx="30" cy="30" r="8" fill="#CC0000"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle><circle cx="170" cy="30" r="8" fill="#CC0000"><animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite"/></circle><rect x="5" y="35" width="20" height="5" rx="2" fill="#CC0000"/></svg>`,
-
-  carpoolSign: `<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="90" height="120" rx="5" fill="#fff" stroke="#000" stroke-width="3"/><polygon points="50,15 60,30 40,30" fill="#000"/><rect x="42" y="30" width="16" height="35" fill="#000"/><text x="50" y="90" text-anchor="middle" fill="#000" font-size="10" font-weight="bold" font-family="Arial">CARPOOL</text><text x="50" y="105" text-anchor="middle" fill="#000" font-size="9" font-family="Arial">2+ ONLY</text></svg>`,
+  schoolBus: `<img src="images/signs/schoolBus.png" alt="School Bus" class="sign-image" />`,
+  carpoolSign: `<img src="images/signs/carpool.png" alt="Carpool Sign" class="sign-image" />`,
 };
 
 const QUESTIONS = [
@@ -1005,11 +973,11 @@ const QUESTIONS = [
   {
     id: "pk_001",
     category: "Parking",
-    question: "A red painted curb means:",
+    question: "You want to park your vehicle, and you notice the curb is painted red. What does a red curb indicate?",
     options: [
-      "Loading zone only",
-      "No stopping, standing, or parking",
-      "Passenger drop-off zone"
+      "You may park here only to load or unload passengers",
+      "No stopping, standing, or parking at any time",
+      "You may stop here only in an emergency"
     ],
     correctAnswer: 1,
     explanation: "Red curb = NO stopping, standing, or parking at any time (except buses at red bus zones).",
@@ -1018,11 +986,11 @@ const QUESTIONS = [
   {
     id: "pk_002",
     category: "Parking",
-    question: "A yellow painted curb means:",
+    question: "You pull up to a yellow painted curb. What are the rules for this zone?",
     options: [
-      "No parking at any time",
-      "Loading and unloading passengers or freight only (time limits apply)",
-      "Parking for handicapped only"
+      "You may park here for up to 15 minutes",
+      "It is for loading and unloading passengers or freight; non-commercial drivers must stay with the vehicle",
+      "It is reserved exclusively for commercial delivery trucks at all times"
     ],
     correctAnswer: 1,
     explanation: "Yellow curb = loading/unloading of passengers or freight only. Drivers of noncommercial vehicles must stay with the vehicle.",
@@ -1031,11 +999,11 @@ const QUESTIONS = [
   {
     id: "pk_003",
     category: "Parking",
-    question: "A green painted curb means:",
+    question: "You need to run into a store quickly and see a green painted curb. What does it mean?",
     options: [
-      "Parking for emergency vehicles",
-      "Limited time parking — look for posted time limits",
-      "No restrictions"
+      "Parking for emergency vehicles only",
+      "Parking for a limited time, usually indicated by a nearby sign",
+      "You may park here indefinitely on weekends"
     ],
     correctAnswer: 1,
     explanation: "Green curb = time-limited parking, often very short (e.g., 15 or 30 minutes). Check posted signs.",
@@ -1044,11 +1012,11 @@ const QUESTIONS = [
   {
     id: "pk_004",
     category: "Parking",
-    question: "A blue painted curb means:",
+    question: "You see a blue painted curb. Who is permitted to park here?",
     options: [
-      "Passenger loading zone",
-      "Parking for disabled persons with a placard or special plates only",
-      "Limited time parking"
+      "Anyone who is just dropping off a passenger",
+      "Only vehicles displaying a disabled person placard or special license plates",
+      "Only residents with a city parking permit"
     ],
     correctAnswer: 1,
     explanation: "Blue curb = reserved for vehicles displaying a disabled person placard or special license plates.",
@@ -1057,11 +1025,11 @@ const QUESTIONS = [
   {
     id: "pk_005",
     category: "Parking",
-    question: "You should park at least how many feet from a fire hydrant?",
+    question: "You are looking for street parking and spot an open space near a fire hydrant. How far away from the hydrant must you park?",
     options: [
-      "10 feet",
-      "15 feet",
-      "20 feet"
+      "At least 10 feet",
+      "At least 15 feet",
+      "At least 20 feet"
     ],
     correctAnswer: 1,
     explanation: "You must park at least 15 feet from a fire hydrant."
@@ -1069,7 +1037,7 @@ const QUESTIONS = [
   {
     id: "pk_006",
     category: "Parking",
-    question: "It is illegal to park within how many feet of a railroad track?",
+    question: "You need to park near a railroad track. What is the minimum legal distance you can park from the tracks?",
     options: [
       "7½ feet",
       "15 feet",
@@ -1081,7 +1049,7 @@ const QUESTIONS = [
   {
     id: "pk_007",
     category: "Parking",
-    question: "When parking parallel, your vehicle must be within how many inches of the curb?",
+    question: "You are parallel parking your car on a city street. Your wheels must be within what distance from the curb?",
     options: [
       "12 inches",
       "18 inches",
@@ -1093,11 +1061,11 @@ const QUESTIONS = [
   {
     id: "pk_008",
     category: "Parking",
-    question: "It is illegal to leave a child age 6 or younger unattended in a car when:",
+    question: "You are running a quick errand and have your 5-year-old child in the car. Under California law, when is it illegal to leave the child unattended in the vehicle?",
     options: [
-      "The engine is running or the keys are in the ignition",
-      "Only when the temperature is above 90°F",
-      "Only in commercial areas"
+      "When the engine is running or the keys are left in the ignition",
+      "Only if you will be gone for more than 15 minutes",
+      "Only when the outside temperature exceeds 90°F"
     ],
     correctAnswer: 0,
     explanation: "California law prohibits leaving a child 6 or younger unattended in a vehicle when the engine is running or keys are in the ignition."
@@ -1105,11 +1073,11 @@ const QUESTIONS = [
   {
     id: "pk_009",
     category: "Parking",
-    question: "When parking on a two-way road, your vehicle should be parked:",
+    question: "You want to park on the left side of a two-way street facing oncoming traffic. Is this legal?",
     options: [
-      "Facing any direction",
-      "Parallel to and facing the same direction as traffic on your side",
-      "At an angle to the curb"
+      "Yes, as long as you pull completely onto the shoulder",
+      "No, you must park parallel to the curb facing the direction of traffic on your side",
+      "Yes, but only in residential neighborhoods"
     ],
     correctAnswer: 1,
     explanation: "Park parallel to and facing the direction of traffic on your side of the road."
@@ -1117,23 +1085,23 @@ const QUESTIONS = [
   {
     id: "pk_010",
     category: "Parking",
-    question: "You may not park your vehicle:",
+    question: "You are having trouble finding a parking spot. In which of the following locations is it always illegal to park?",
     options: [
-      "On the shoulder of the freeway",
-      "In a marked or unmarked crosswalk",
-      "In a residential area"
+      "On a bridge, unless permitted by signs",
+      "In an unmarked crosswalk at an intersection",
+      "Both of the above"
     ],
-    correctAnswer: 1,
-    explanation: "You may never park in a crosswalk (marked or unmarked), on a sidewalk, or blocking a driveway."
+    correctAnswer: 2,
+    explanation: "You may never park in a crosswalk (marked or unmarked), on a sidewalk, or blocking a driveway, nor on a bridge unless posted."
   },
   {
     id: "pk_011",
     category: "Parking",
-    question: "Double parking (parking in the road next to a parked car) is:",
+    question: "The curb is full, so you stop your vehicle in the road next to a row of parked cars to wait for a friend. This is called 'double parking'. Is this legal?",
     options: [
-      "Legal for short stops",
-      "Always illegal",
-      "Legal if your hazard lights are on"
+      "Yes, if you keep your engine running and stay in the driver's seat",
+      "No, double parking is always illegal",
+      "Yes, if you turn on your emergency hazard lights"
     ],
     correctAnswer: 1,
     explanation: "Double parking is always illegal in California."
@@ -1141,11 +1109,11 @@ const QUESTIONS = [
   {
     id: "pk_012",
     category: "Parking",
-    question: "When leaving your vehicle, you should always:",
+    question: "You are preparing to leave your vehicle parked on the street. Before walking away, you must:",
     options: [
-      "Leave the engine running",
-      "Set the parking brake and lock the vehicle",
-      "Leave the windows down"
+      "Leave the transmission in neutral and turn the wheels away from the curb",
+      "Stop the engine, set the parking brake, and take the ignition key with you",
+      "Leave your hazard lights flashing if the spot is dimly lit"
     ],
     correctAnswer: 1,
     explanation: "Always set the parking brake, turn off the engine, remove the key, and lock the vehicle when leaving."
@@ -1157,11 +1125,11 @@ const QUESTIONS = [
   {
     id: "ad_001",
     category: "Alcohol & Drugs",
-    question: "The legal blood alcohol concentration (BAC) limit for drivers 21 and older is:",
+    question: "You are 25 years old and have had a few drinks at a party. Under California law, it is illegal for you to drive with a Blood Alcohol Concentration (BAC) of:",
     options: [
-      "0.05%",
-      "0.08%",
-      "0.10%"
+      "0.05% or higher",
+      "0.08% or higher",
+      "0.10% or higher"
     ],
     correctAnswer: 1,
     explanation: "In California, the legal BAC limit for drivers 21 and older is 0.08%. You can be impaired below this level."
@@ -1169,11 +1137,11 @@ const QUESTIONS = [
   {
     id: "ad_002",
     category: "Alcohol & Drugs",
-    question: "The legal BAC limit for drivers under 21 is:",
+    question: "You are 19 years old. What is the legal Blood Alcohol Concentration (BAC) limit for you to drive?",
     options: [
-      "0.01%",
-      "0.05%",
-      "0.08%"
+      "0.01% or higher (zero tolerance)",
+      "0.05% or higher",
+      "0.08% or higher"
     ],
     correctAnswer: 0,
     explanation: "California has a zero-tolerance law for drivers under 21. The BAC limit is 0.01%."
@@ -1181,11 +1149,11 @@ const QUESTIONS = [
   {
     id: "ad_003",
     category: "Alcohol & Drugs",
-    question: "California's 'implied consent' law means:",
+    question: "You are pulled over, and a police officer suspects you of a DUI. The officer asks you to take a breath or blood test. Under the 'implied consent' law, you:",
     options: [
-      "You consent to traffic laws when you get your license",
-      "By driving in California, you have agreed to submit to a chemical test if arrested for DUI",
-      "Passengers consent to the driver's behavior"
+      "Can refuse the test without penalty if it is your first offense",
+      "Have already consented to take the test just by driving in California",
+      "Must take the test only if you were involved in a collision"
     ],
     correctAnswer: 1,
     explanation: "By driving in California, you automatically consent to a chemical test (blood, breath, or urine) if lawfully arrested for DUI."
@@ -1193,11 +1161,11 @@ const QUESTIONS = [
   {
     id: "ad_004",
     category: "Alcohol & Drugs",
-    question: "If you refuse a chemical test when arrested for DUI, your license will be:",
+    question: "You are arrested for a DUI and refuse to take a chemical test (blood or breath). What will happen to your driver's license?",
     options: [
-      "Suspended for 6 months",
-      "Suspended for 1 year",
-      "Not affected"
+      "It will be suspended for 6 months",
+      "It will be suspended for 1 year",
+      "You will simply be fined $500 instead"
     ],
     correctAnswer: 1,
     explanation: "Refusing a chemical test results in a mandatory 1-year license suspension for the first offense, plus other penalties."
@@ -1205,11 +1173,11 @@ const QUESTIONS = [
   {
     id: "ad_005",
     category: "Alcohol & Drugs",
-    question: "Alcohol affects your driving by:",
+    question: "You are considering driving home after drinking alcohol. You should remember that alcohol affects your driving primarily by:",
     options: [
-      "Improving your reaction time",
-      "Impairing judgment, reaction time, and coordination",
-      "Making you a more cautious driver"
+      "Making you more alert to potential hazards",
+      "Impairing your judgment, slowing reaction time, and reducing coordination",
+      "Decreasing your stopping distance"
     ],
     correctAnswer: 1,
     explanation: "Alcohol impairs judgment, slows reaction time, reduces coordination, and affects vision — all critical for safe driving."
@@ -1217,10 +1185,10 @@ const QUESTIONS = [
   {
     id: "ad_006",
     category: "Alcohol & Drugs",
-    question: "The only thing that can sober you up is:",
+    question: "You have had several drinks and feel intoxicated, but you need to drive home. What is the only thing that will sober you up?",
     options: [
-      "Coffee",
-      "A cold shower",
+      "Drinking two cups of black coffee",
+      "Taking a cold shower before leaving",
       "Time"
     ],
     correctAnswer: 2,
@@ -1229,11 +1197,11 @@ const QUESTIONS = [
   {
     id: "ad_007",
     category: "Alcohol & Drugs",
-    question: "A first DUI conviction in California can result in:",
+    question: "You are convicted of your first DUI. What are the potential penalties?",
     options: [
-      "A warning and a fine",
-      "Up to 6 months in jail, fines up to $1,000, and license suspension",
-      "A suspended sentence only"
+      "A written warning and a small fine",
+      "Up to 6 months in jail, heavy fines, license suspension, and mandatory DUI school",
+      "Your car will be permanently confiscated"
     ],
     correctAnswer: 1,
     explanation: "A first DUI can result in up to 6 months in jail, fines of $390–$1,000 (plus assessments), license suspension, and mandatory DUI school."
@@ -1241,11 +1209,11 @@ const QUESTIONS = [
   {
     id: "ad_008",
     category: "Alcohol & Drugs",
-    question: "It is illegal to drink any alcoholic beverage while:",
+    question: "You are a passenger in a vehicle driving on the highway. Can you legally drink an alcoholic beverage while the car is moving?",
     options: [
-      "Sitting in a parked car",
-      "Driving or riding in a vehicle on a highway",
-      "At a restaurant near a road"
+      "Yes, as long as the driver is not drinking",
+      "No, it is illegal for anyone to drink alcohol in a vehicle on a highway",
+      "Yes, but only if it is beer or wine"
     ],
     correctAnswer: 1,
     explanation: "It is illegal to drink any alcoholic beverage while driving or riding as a passenger in a motor vehicle on a highway."
@@ -1253,11 +1221,11 @@ const QUESTIONS = [
   {
     id: "ad_009",
     category: "Alcohol & Drugs",
-    question: "Prescription medications can:",
+    question: "You are taking a new prescription medication for a cold. Before driving, you should:",
     options: [
-      "Never affect your driving",
-      "Impair your driving just as much as alcohol or illegal drugs",
-      "Always be used safely while driving"
+      "Assume it is safe because it was prescribed by a doctor",
+      "Understand that many prescription drugs can impair your driving just as much as alcohol",
+      "Only worry if you are taking the medication along with alcohol"
     ],
     correctAnswer: 1,
     explanation: "Many prescription and over-the-counter medications can impair driving. Check labels and ask your doctor."
@@ -1265,11 +1233,11 @@ const QUESTIONS = [
   {
     id: "ad_010",
     category: "Alcohol & Drugs",
-    question: "If you are taking medication and plan to drive, you should:",
+    question: "You purchased over-the-counter allergy medicine. Before getting behind the wheel, you should:",
     options: [
-      "Not worry about it",
-      "Read the label for warnings about drowsiness or impairment",
-      "Always drive slower"
+      "Not worry, because over-the-counter medicines do not affect driving",
+      "Read the label to see if it causes drowsiness or warns against operating machinery",
+      "Take half the dose to ensure you don't get sleepy"
     ],
     correctAnswer: 1,
     explanation: "Always read medication labels for warnings about driving. Ask your doctor or pharmacist if unsure."
@@ -1277,7 +1245,7 @@ const QUESTIONS = [
   {
     id: "ad_011",
     category: "Alcohol & Drugs",
-    question: "The BAC limit for commercial vehicle drivers is:",
+    question: "You hold a commercial driver's license (CDL) and are driving a commercial vehicle. The legal BAC limit for you is:",
     options: [
       "0.04%",
       "0.08%",
@@ -1289,11 +1257,11 @@ const QUESTIONS = [
   {
     id: "ad_012",
     category: "Alcohol & Drugs",
-    question: "Driving under the influence of marijuana is:",
+    question: "Since marijuana is legal for recreational use in California, what is the law regarding driving under its influence?",
     options: [
-      "Legal in California since marijuana is legal",
-      "Illegal and subject to the same penalties as alcohol DUI",
-      "Legal as long as you are a medical patient"
+      "It is perfectly legal to drive after using marijuana",
+      "It is illegal, and you will be subject to the same DUI penalties as if you were drinking alcohol",
+      "It is legal as long as you have a doctor's recommendation"
     ],
     correctAnswer: 1,
     explanation: "Driving under the influence of marijuana (or any drug) is illegal in California, regardless of marijuana's legal status."
@@ -1301,11 +1269,11 @@ const QUESTIONS = [
   {
     id: "ad_013",
     category: "Alcohol & Drugs",
-    question: "What is the best way to avoid a DUI?",
+    question: "You are going out for the evening and know you will be drinking. What is the best way to ensure you do not get a DUI?",
     options: [
-      "Eat a large meal before drinking",
-      "Don't drink and drive — use a designated driver, ride share, or taxi",
-      "Drink only beer instead of hard liquor"
+      "Stop drinking at least one hour before you plan to drive",
+      "Plan ahead to have a designated driver, or use a taxi/rideshare service",
+      "Drive slower and stick to back roads"
     ],
     correctAnswer: 1,
     explanation: "The only sure way to avoid a DUI is to not drink and drive. Plan ahead with a designated driver or ride service."
@@ -1313,23 +1281,23 @@ const QUESTIONS = [
   {
     id: "ad_014",
     category: "Alcohol & Drugs",
-    question: "It is illegal to have an open container of alcohol in:",
+    question: "You are driving home from a party and have an opened bottle of wine. Where is the only legal place to keep it?",
     options: [
-      "The trunk",
-      "The passenger area of the vehicle",
-      "A locked glove compartment"
+      "In the trunk",
+      "In the passenger area, as long as it has a cork in it",
+      "In the glove compartment"
     ],
-    correctAnswer: 1,
-    explanation: "Open containers of alcohol are illegal in the passenger area. They may be stored in the trunk."
+    correctAnswer: 0,
+    explanation: "Open containers of alcohol are illegal in the passenger area. They must be stored in the trunk."
   },
   {
     id: "ad_015",
     category: "Alcohol & Drugs",
-    question: "If you are arrested for DUI and have a BAC of 0.08% or more, your license will be suspended by the DMV for:",
+    question: "You are pulled over and take a breath test that shows a BAC of 0.08%. What immediate action will the DMV take?",
     options: [
-      "30 days",
-      "4 months (admin per se suspension for first offense)",
-      "1 year"
+      "They will fine you $100 on the spot",
+      "They will impose an 'administrative per se' suspension of your license for 4 months",
+      "They will impound your car for a week"
     ],
     correctAnswer: 1,
     explanation: "The DMV imposes an administrative per se suspension of 4 months for a first offense with a BAC of 0.08% or more."
@@ -1366,11 +1334,11 @@ const QUESTIONS = [
   {
     id: "sr_003",
     category: "Sharing the Road",
-    question: "You must yield the right-of-way to a pedestrian:",
+    question: "You approach an intersection with no marked crosswalks or traffic lights. A pedestrian is waiting to cross. Who has the right-of-way?",
     options: [
-      "Only in marked crosswalks",
-      "In both marked and unmarked crosswalks",
-      "Only if they have a walk signal"
+      "You do, because there is no marked crosswalk",
+      "The pedestrian does, because there is an implied crosswalk at every intersection",
+      "Whoever reached the intersection first"
     ],
     correctAnswer: 1,
     explanation: "You must yield to pedestrians in all crosswalks, whether marked or unmarked (every intersection has an implied crosswalk)."
@@ -1378,11 +1346,11 @@ const QUESTIONS = [
   {
     id: "sr_004",
     category: "Sharing the Road",
-    question: "When you see a blind pedestrian with a white cane or guide dog at an intersection, you must:",
+    question: "You are stopped at an intersection, and a blind pedestrian with a guide dog is preparing to cross. You should:",
     options: [
-      "Honk to let them know you are there",
-      "Stop and yield the right-of-way — do not honk",
-      "Speed up to pass before they cross"
+      "Honk your horn lightly to let them know you are waiting",
+      "Remain stopped and yield the right-of-way without honking",
+      "Drive past quickly before they step into the street"
     ],
     correctAnswer: 1,
     explanation: "Always stop and yield to blind pedestrians. Do not honk, as it may confuse them."
@@ -1390,11 +1358,11 @@ const QUESTIONS = [
   {
     id: "sr_005",
     category: "Sharing the Road",
-    question: "Motorcycles are entitled to:",
+    question: "You are driving on the highway and notice a motorcycle ahead. How much of the lane is the motorcycle entitled to?",
     options: [
-      "Half a lane only",
-      "A full traffic lane, just like any other vehicle",
-      "The bicycle lane when available"
+      "Only the right half of the lane",
+      "The full traffic lane, just like a car",
+      "They must ride on the shoulder if traffic is heavy"
     ],
     correctAnswer: 1,
     explanation: "Motorcycles are entitled to a full traffic lane. Do not try to share their lane."
@@ -1402,11 +1370,11 @@ const QUESTIONS = [
   {
     id: "sr_006",
     category: "Sharing the Road",
-    question: "When driving behind a motorcycle, you should:",
+    question: "You are following a motorcycle on a winding road. Your following distance should be:",
     options: [
-      "Follow closely so they can see you in their mirror",
-      "Follow at a greater distance than you would for a car",
-      "Follow at the same distance as a car"
+      "Closer than you would for a car so they can see you in their mirrors",
+      "Greater than you would for a car",
+      "Exactly the same as you would for a car"
     ],
     correctAnswer: 1,
     explanation: "Follow motorcycles at a greater distance because they can stop much more quickly than a car."
@@ -1414,11 +1382,11 @@ const QUESTIONS = [
   {
     id: "sr_007",
     category: "Sharing the Road",
-    question: "Lane splitting by motorcycles in California is:",
+    question: "You are in heavy traffic, and a motorcycle passes you by riding between lanes of slow-moving vehicles. Is this legal in California?",
     options: [
-      "Always illegal",
-      "Legal when done in a safe and prudent manner",
-      "Legal only on freeways"
+      "No, lane splitting is always illegal",
+      "Yes, lane splitting is legal when done safely and prudently",
+      "Yes, but only on highways with a speed limit over 65 mph"
     ],
     correctAnswer: 1,
     explanation: "California is the only state that allows lane splitting by motorcycles, when done safely and prudently."
@@ -1426,11 +1394,11 @@ const QUESTIONS = [
   {
     id: "sr_008",
     category: "Sharing the Road",
-    question: "When driving near a large truck, you should avoid:",
+    question: "You are driving on the freeway near a large commercial truck. What area should you avoid lingering in?",
     options: [
-      "Passing on the left side",
-      "Driving in their large blind spots (No-Zones)",
-      "Maintaining a safe following distance"
+      "Directly in front of the truck only",
+      "The truck's large blind spots (No-Zones) on all four sides",
+      "The fast lane next to the truck"
     ],
     correctAnswer: 1,
     explanation: "Large trucks have extensive blind spots (No-Zones) on all four sides. Avoid lingering in these areas."
@@ -1438,11 +1406,11 @@ const QUESTIONS = [
   {
     id: "sr_009",
     category: "Sharing the Road",
-    question: "When an emergency vehicle is approaching with lights and sirens, you must:",
+    question: "You hear sirens and see an ambulance approaching from behind with flashing lights. What must you do?",
     options: [
-      "Speed up to get out of the way",
-      "Pull to the right edge of the road and stop",
-      "Stop immediately wherever you are"
+      "Speed up to clear the lane for them",
+      "Pull over to the right edge of the road and stop",
+      "Stop immediately in your current lane"
     ],
     correctAnswer: 1,
     explanation: "Pull to the right side of the road and stop until the emergency vehicle passes."
@@ -1450,11 +1418,11 @@ const QUESTIONS = [
   {
     id: "sr_010",
     category: "Sharing the Road",
-    question: "California's 'Move Over' law requires you to:",
+    question: "You see a police car stopped on the right shoulder of the freeway with its emergency lights flashing. Under California's 'Move Over' law, you must:",
     options: [
-      "Move over one lane (or slow down) when passing a stopped emergency vehicle with flashing lights",
-      "Always move to the right lane",
-      "Speed up to clear the area quickly"
+      "Move over one lane to the left if safe, or slow down if you cannot change lanes",
+      "Honk your horn to acknowledge them",
+      "Speed up to get past the hazard quickly"
     ],
     correctAnswer: 0,
     explanation: "The Move Over law requires drivers to change lanes away from stopped emergency vehicles, or slow down if lane change isn't possible."
@@ -1462,11 +1430,11 @@ const QUESTIONS = [
   {
     id: "sr_011",
     category: "Sharing the Road",
-    question: "When approaching a pedestrian using a guide dog or white cane, you should:",
+    question: "You approach an intersection and see a pedestrian with a white cane waiting to cross. You should:",
     options: [
-      "Honk to alert them",
-      "Come to a complete stop",
-      "Move into the next lane"
+      "Honk to let them know it is safe to cross",
+      "Come to a complete stop and wait for them to cross safely",
+      "Continue driving if they haven't stepped off the curb yet"
     ],
     correctAnswer: 1,
     explanation: "Always stop completely for visually impaired pedestrians. Do not honk — it can be disorienting."
@@ -1474,11 +1442,11 @@ const QUESTIONS = [
   {
     id: "sr_012",
     category: "Sharing the Road",
-    question: "You must not pass a vehicle stopped at a crosswalk because:",
+    question: "You are driving in the left lane of a multi-lane road. The car in the right lane is stopped at a crosswalk. You should:",
     options: [
-      "It is considered rude",
-      "A pedestrian you cannot see may be crossing",
-      "The stopped driver might move suddenly"
+      "Pass them quickly",
+      "Stop as well, because they may be yielding to a pedestrian you cannot see",
+      "Honk at the stopped car to get them to move"
     ],
     correctAnswer: 1,
     explanation: "The stopped vehicle may be yielding to a pedestrian. Never pass a vehicle stopped at a crosswalk."
@@ -1486,11 +1454,11 @@ const QUESTIONS = [
   {
     id: "sr_013",
     category: "Sharing the Road",
-    question: "Bicyclists on the road have:",
+    question: "You are sharing a narrow road with a bicyclist. What rights do bicyclists have on California roads?",
     options: [
-      "Fewer rights than motor vehicles",
-      "The same rights and responsibilities as motor vehicle drivers",
-      "More rights because they are vulnerable"
+      "They must always yield to motor vehicles",
+      "They have the same rights and responsibilities as motor vehicle drivers",
+      "They have absolute right-of-way over all vehicles"
     ],
     correctAnswer: 1,
     explanation: "Bicyclists have the same rights and responsibilities as motor vehicle drivers on California roads."
@@ -1498,11 +1466,11 @@ const QUESTIONS = [
   {
     id: "sr_014",
     category: "Sharing the Road",
-    question: "When can you drive in a bike lane?",
+    question: "You want to make a right turn at an upcoming intersection, but there is a bike lane on your right. What is the proper procedure?",
     options: [
-      "Whenever it is convenient",
-      "Only within 200 feet of making a right turn (after checking for bicyclists)",
-      "Never — it is always illegal"
+      "Turn from your traffic lane, cutting across the bike lane",
+      "Merge into the bike lane no more than 200 feet before the turn, after yielding to any bicycles",
+      "Never enter the bike lane; it is for bicycles only"
     ],
     correctAnswer: 1,
     explanation: "You may enter a bike lane within 200 feet of a right turn, but you must first check for and yield to bicyclists."
@@ -1510,11 +1478,11 @@ const QUESTIONS = [
   {
     id: "sr_015",
     category: "Sharing the Road",
-    question: "Pedestrians have the right-of-way:",
+    question: "You are approaching a residential intersection without stop signs. A pedestrian steps into the street. Who has the right-of-way?",
     options: [
-      "Only when crossing at a green light",
-      "At all intersections, whether or not there is a marked crosswalk",
-      "Only on residential streets"
+      "You do, because there are no stop signs",
+      "The pedestrian does, because they have the right-of-way at all intersections",
+      "Whoever is moving faster"
     ],
     correctAnswer: 1,
     explanation: "Pedestrians have the right-of-way at all intersections. Every intersection has a crosswalk, whether marked or not."
@@ -1522,11 +1490,11 @@ const QUESTIONS = [
   {
     id: "sr_016",
     category: "Sharing the Road",
-    question: "You should never drive alongside or pass a large truck that is:",
+    question: "You are stopped at a red light next to a large semi-truck that is signaling a right turn. You should:",
     options: [
-      "Driving below the speed limit",
-      "Making a wide right turn",
-      "In the left lane"
+      "Pull up as close as possible to the truck",
+      "Stay well back, as the truck will swing wide to the left before making the right turn",
+      "Try to squeeze past on the right side before they turn"
     ],
     correctAnswer: 1,
     explanation: "Never try to squeeze between a large truck and the curb when it is making a wide right turn. The truck may crush you."
@@ -1534,11 +1502,11 @@ const QUESTIONS = [
   {
     id: "sr_017",
     category: "Sharing the Road",
-    question: "When passing a horse and rider on the road, you should:",
+    question: "You are driving on a rural road and come up behind a person riding a horse. You should:",
     options: [
-      "Honk to alert the horse",
-      "Slow down and pass carefully — do not honk",
-      "Pass as quickly as possible"
+      "Honk to let them know you are passing",
+      "Slow down and pass carefully, giving them plenty of space without honking",
+      "Rev your engine to scare the horse off the road"
     ],
     correctAnswer: 1,
     explanation: "Horses can be startled by loud noises. Slow down and pass carefully without honking."
@@ -1546,11 +1514,11 @@ const QUESTIONS = [
   {
     id: "sr_018",
     category: "Sharing the Road",
-    question: "Slow-moving vehicles on the highway (like farm equipment) display:",
+    question: "You are driving on a country road and see a farm tractor ahead displaying a fluorescent orange triangle on the rear. This means:",
     options: [
-      "A red flag",
-      "An orange triangle on the back",
-      "Flashing headlights"
+      "The vehicle is carrying hazardous materials",
+      "It is a slow-moving vehicle designed to travel at 25 mph or less",
+      "The vehicle is broken down"
     ],
     correctAnswer: 1,
     explanation: "Slow-moving vehicles display a fluorescent orange triangle on the rear."
@@ -1562,11 +1530,11 @@ const QUESTIONS = [
   {
     id: "em_001",
     category: "Emergencies",
-    question: "If your car starts to skid, you should:",
+    question: "You are driving on a wet road, and the rear of your car starts to skid to the right. How should you correct the skid?",
     options: [
-      "Slam on the brakes",
-      "Steer in the direction you want to go and ease off the gas",
-      "Turn the wheel in the opposite direction"
+      "Slam on the brakes immediately",
+      "Take your foot off the gas and steer to the right (the direction of the skid)",
+      "Steer hard to the left to overcorrect"
     ],
     correctAnswer: 1,
     explanation: "In a skid, steer in the direction you want the front of the car to go. Do not brake hard."
@@ -1574,11 +1542,11 @@ const QUESTIONS = [
   {
     id: "em_002",
     category: "Emergencies",
-    question: "If a tire blows out while driving, you should:",
+    question: "You are driving at 65 mph when your front right tire suddenly blows out. What should you do first?",
     options: [
-      "Brake hard immediately",
-      "Hold the steering wheel firmly, ease off the gas, and steer straight",
-      "Turn the steering wheel quickly to the side of the road"
+      "Brake hard and steer onto the shoulder",
+      "Grip the steering wheel firmly, ease off the gas pedal, and keep the car going straight",
+      "Quickly shift into neutral"
     ],
     correctAnswer: 1,
     explanation: "Hold the steering wheel firmly, gradually slow down, and steer to the side of the road. Do not slam the brakes."
@@ -1586,11 +1554,11 @@ const QUESTIONS = [
   {
     id: "em_003",
     category: "Emergencies",
-    question: "If your brakes fail, you should:",
+    question: "You are driving down a steep hill and realize your brakes have failed. What is the best immediate action?",
     options: [
-      "Pump the brakes rapidly, downshift, and use the parking brake gradually",
-      "Turn off the engine immediately",
-      "Jump out of the car"
+      "Pump the brake pedal rapidly to build pressure and downshift to a lower gear",
+      "Turn off the engine to stop the wheels",
+      "Pull the emergency brake as hard as possible"
     ],
     correctAnswer: 0,
     explanation: "Pump the brake pedal rapidly to build pressure. Downshift to lower gears. Use the parking brake gradually. Look for an escape route."
@@ -1598,11 +1566,11 @@ const QUESTIONS = [
   {
     id: "em_004",
     category: "Emergencies",
-    question: "If your accelerator (gas pedal) sticks, you should:",
+    question: "While driving on the freeway, your gas pedal suddenly sticks, and your car continues to accelerate. What should you do?",
     options: [
-      "Turn off the engine immediately",
-      "Shift to neutral, apply the brakes, and pull off the road",
-      "Pump the gas pedal"
+      "Turn off the ignition immediately and remove the key",
+      "Shift the vehicle into neutral, apply the brakes firmly, and look for a safe place to pull over",
+      "Reach down to try and unstick the pedal with your hand while steering"
     ],
     correctAnswer: 1,
     explanation: "Shift to neutral to disengage the engine from the wheels, apply brakes, and safely pull off the road."
@@ -1610,11 +1578,11 @@ const QUESTIONS = [
   {
     id: "em_005",
     category: "Emergencies",
-    question: "If your vehicle catches fire, you should:",
+    question: "Smoke starts pouring from under the hood of your car while driving. What is the safest response?",
     options: [
-      "Keep driving to the nearest fire station",
-      "Pull over, turn off the engine, get everyone away from the vehicle, and call 911",
-      "Pour water on the engine"
+      "Drive quickly to the nearest gas station for help",
+      "Pull over safely, turn off the engine, get everyone out of the car, and call 911",
+      "Open the hood immediately to see what is burning"
     ],
     correctAnswer: 1,
     explanation: "Pull over safely, turn off the engine, move everyone away from the vehicle, and call 911."
@@ -1622,11 +1590,11 @@ const QUESTIONS = [
   {
     id: "em_006",
     category: "Emergencies",
-    question: "If your vehicle breaks down on the freeway, you should:",
+    question: "Your car engine dies completely while driving in the middle lane of a busy freeway. What is the best course of action?",
     options: [
-      "Stop where you are and call for help",
-      "Pull completely off the road, make your car visible with hazard lights, and call for help",
-      "Try to flag down another driver"
+      "Stop right where you are and call for a tow truck",
+      "Use your remaining momentum to pull completely onto the right shoulder, then turn on your hazard lights",
+      "Get out of your car and try to wave traffic around you"
     ],
     correctAnswer: 1,
     explanation: "Pull completely off the road, turn on hazard lights, raise the hood if possible, and call for help."
@@ -1634,11 +1602,11 @@ const QUESTIONS = [
   {
     id: "em_007",
     category: "Emergencies",
-    question: "You are involved in a collision and someone is injured. You must:",
+    question: "You are involved in a collision at an intersection, and the other driver appears to be injured. What are your legal obligations?",
     options: [
-      "Move the injured person away from the road",
-      "Stop, call 911, give aid if qualified, and report the crash",
-      "Leave to get help"
+      "You may leave the scene if it wasn't your fault",
+      "Stop immediately, call 911, and provide reasonable assistance to the injured person",
+      "Exchange insurance information and then drive away"
     ],
     correctAnswer: 1,
     explanation: "California law requires you to stop at the scene, call for help, give reasonable aid, and exchange information."
@@ -1646,11 +1614,11 @@ const QUESTIONS = [
   {
     id: "em_008",
     category: "Emergencies",
-    question: "If you are in a collision with a parked car and cannot find the owner, you must:",
+    question: "You accidentally back into an unoccupied parked car in a parking lot, denting the door. You cannot locate the owner. What must you do?",
     options: [
-      "Leave without doing anything",
-      "Leave a note with your name, address, and what happened, then report to police",
-      "Wait at the scene for the owner"
+      "Leave immediately since no one was hurt",
+      "Leave a secure note with your name, contact info, and a description of the accident, then notify police",
+      "Wait by the car for at least 4 hours"
     ],
     correctAnswer: 1,
     explanation: "Leave a note with your name, phone number, address, and a description of what happened. Report the collision to police."
@@ -1658,11 +1626,11 @@ const QUESTIONS = [
   {
     id: "em_009",
     category: "Emergencies",
-    question: "A collision must be reported to the DMV within 10 days if:",
+    question: "You are involved in a traffic accident resulting in $1,500 worth of property damage but no injuries. What form must you file with the DMV, and within how many days?",
     options: [
-      "There is any damage to your vehicle",
-      "There is an injury, death, or property damage exceeding $1,000",
-      "Only if you were at fault"
+      "No form is required if there are no injuries",
+      "An SR-1 form within 10 days",
+      "A police report within 30 days"
     ],
     correctAnswer: 1,
     explanation: "You must file a report with the DMV (Form SR-1) within 10 days if anyone is injured/killed or property damage exceeds $1,000."
@@ -1670,11 +1638,11 @@ const QUESTIONS = [
   {
     id: "em_010",
     category: "Emergencies",
-    question: "If you encounter a collision scene, you should:",
+    question: "You witness a severe collision on the highway ahead of you. You are the first person on the scene. What should you do?",
     options: [
-      "Stop only if you are involved",
-      "Pull over safely, call 911 if needed, and offer help if qualified",
-      "Always stop and direct traffic"
+      "Keep driving to avoid getting involved",
+      "Pull completely off the road safely, call 911, and offer help only if you are trained and it is safe to do so",
+      "Run into the road to stop oncoming traffic"
     ],
     correctAnswer: 1,
     explanation: "Pull over safely if you can help. Call 911 and provide assistance if you are trained to do so."
@@ -1682,23 +1650,23 @@ const QUESTIONS = [
   {
     id: "em_011",
     category: "Emergencies",
-    question: "If your vehicle is stalled on railroad tracks and a train is approaching, you should:",
+    question: "Your car stalls directly on a set of railroad tracks, and you see a train approaching in the distance. What is the safest action?",
     options: [
-      "Try to restart the engine",
-      "Get out immediately and run diagonally away from the tracks toward the oncoming train",
-      "Call 911 and wait in the car"
+      "Stay in the car and try to restart the engine",
+      "Get out immediately and run at a 45-degree angle away from the tracks in the direction the train is coming from",
+      "Get out and run straight down the tracks away from the train"
     ],
     correctAnswer: 1,
-    explanation: "Get out of the vehicle immediately and run diagonally away from the tracks, toward the approaching train. This avoids being hit by debris."
+    explanation: "Get out of the vehicle immediately and run diagonally away from the tracks, toward the approaching train. This avoids being hit by flying debris."
   },
   {
     id: "em_012",
     category: "Emergencies",
-    question: "What is the emergency number to call in case of a traffic collision?",
+    question: "You witness a multi-car collision with severe injuries on the freeway. What number should you dial for emergency services?",
     options: [
       "311",
       "911",
-      "411"
+      "Your auto insurance provider"
     ],
     correctAnswer: 1,
     explanation: "Call 911 for any emergency including traffic collisions with injuries."
@@ -1710,11 +1678,11 @@ const QUESTIONS = [
   {
     id: "ve_001",
     category: "Vehicle Equipment",
-    question: "All vehicles must have working:",
+    question: "You are preparing to take your driving test. The DMV examiner will check your vehicle to ensure it has working:",
     options: [
-      "Air conditioning",
+      "Air conditioning and a radio",
       "Brakes, headlights, taillights, turn signals, horn, mirrors, and windshield wipers",
-      "GPS navigation"
+      "Fog lights and a backup camera"
     ],
     correctAnswer: 1,
     explanation: "California law requires working brakes, lights (headlights, taillights, brake lights), signals, horn, mirrors, and wipers."
@@ -1722,11 +1690,11 @@ const QUESTIONS = [
   {
     id: "ve_002",
     category: "Vehicle Equipment",
-    question: "Your vehicle must have at least how many mirrors?",
+    question: "You are adjusting your vehicle's mirrors before driving. California law requires your vehicle to have at least:",
     options: [
-      "One (rearview mirror)",
-      "Two (rearview and left side mirror)",
-      "Three"
+      "One rearview mirror",
+      "Two mirrors (typically the inside rearview and left outside mirror)",
+      "Three mirrors (inside, left, and right outside)"
     ],
     correctAnswer: 1,
     explanation: "California requires at least two mirrors — a rearview mirror and a left-side mirror — that provide a view of the highway at least 200 feet behind."
@@ -1734,11 +1702,11 @@ const QUESTIONS = [
   {
     id: "ve_003",
     category: "Vehicle Equipment",
-    question: "Children under age 2 must ride in:",
+    question: "You are traveling with your 18-month-old niece. By law, she must be secured in:",
     options: [
-      "Any car seat in the back seat",
+      "A forward-facing car seat",
       "A rear-facing car seat in the back seat",
-      "A booster seat"
+      "A standard seatbelt if she sits in the back"
     ],
     correctAnswer: 1,
     explanation: "Children under 2 must ride in a rear-facing car seat in the back seat, unless they weigh 40+ lbs or are 40+ inches tall."
@@ -1746,11 +1714,11 @@ const QUESTIONS = [
   {
     id: "ve_004",
     category: "Vehicle Equipment",
-    question: "Children under age 8 must:",
+    question: "You are driving your 6-year-old son to school. Under California law, he must be:",
     options: [
-      "Sit in the front seat",
-      "Be secured in a car seat or booster seat in the back seat",
-      "Wear only a seatbelt"
+      "Allowed to sit in the front passenger seat",
+      "Secured in a federally approved child passenger restraint system (car seat or booster) in the back seat",
+      "Required only to wear a lap belt"
     ],
     correctAnswer: 1,
     explanation: "Children under 8 must be properly secured in a car seat or booster seat in the back seat."
@@ -1758,11 +1726,11 @@ const QUESTIONS = [
   {
     id: "ve_005",
     category: "Vehicle Equipment",
-    question: "How dark can your front side window tint legally be in California?",
+    question: "You want to tint the windows of your car to reduce heat. What is the legal requirement for the front side windows in California?",
     options: [
-      "Any darkness",
-      "Must allow at least 70% of light in",
-      "Must allow at least 50% of light in"
+      "They can be as dark as you want",
+      "They must allow at least 70% of light to pass through",
+      "Tinting front windows is completely illegal"
     ],
     correctAnswer: 1,
     explanation: "Front side windows must allow at least 70% of light to pass through in California."
@@ -1770,11 +1738,11 @@ const QUESTIONS = [
   {
     id: "ve_006",
     category: "Vehicle Equipment",
-    question: "Wearing a seatbelt is required for:",
+    question: "You are driving with three friends in the car. Who is legally required to wear a seatbelt?",
     options: [
       "Only the driver",
-      "Only the driver and front seat passenger",
-      "All occupants in the vehicle"
+      "Only passengers in the front seat",
+      "The driver and all passengers"
     ],
     correctAnswer: 2,
     explanation: "California law requires all occupants of a vehicle to wear seatbelts, regardless of seating position."
@@ -1782,11 +1750,11 @@ const QUESTIONS = [
   {
     id: "ve_007",
     category: "Vehicle Equipment",
-    question: "When must you use your headlights?",
+    question: "It is late afternoon and the sun is beginning to set. When does California law require you to turn on your headlights?",
     options: [
-      "Only at night",
-      "From 30 minutes after sunset to 30 minutes before sunrise, and when visibility is less than 1,000 feet",
-      "Only when it's raining"
+      "Only when it is completely dark",
+      "30 minutes after sunset until 30 minutes before sunrise, or whenever visibility is less than 1,000 feet",
+      "Only when driving on freeways"
     ],
     correctAnswer: 1,
     explanation: "Headlights are required from 30 minutes after sunset to 30 minutes before sunrise, and whenever you cannot see 1,000 feet ahead."
@@ -1794,11 +1762,11 @@ const QUESTIONS = [
   {
     id: "ve_008",
     category: "Vehicle Equipment",
-    question: "You must have liability insurance that covers at least:",
+    question: "You are registering a new vehicle in California. What is the minimum liability insurance coverage required?",
     options: [
-      "$5,000 for property damage",
-      "$15,000 for injury/death of one person, $30,000 for injury/death of two or more, and $5,000 for property damage",
-      "$50,000 total coverage"
+      "$5,000 for property damage only",
+      "$15,000 for a single injury/death, $30,000 for multiple injuries/deaths, and $5,000 for property damage",
+      "$100,000 comprehensive coverage"
     ],
     correctAnswer: 1,
     explanation: "California's minimum liability insurance is 15/30/5: $15,000 per person injury, $30,000 per accident injury, $5,000 property damage."
@@ -1806,11 +1774,11 @@ const QUESTIONS = [
   {
     id: "ve_009",
     category: "Vehicle Equipment",
-    question: "It is illegal to drive with:",
+    question: "You want to listen to music from your phone while driving. Is it legal to wear headphones?",
     options: [
-      "Headphones or earbuds covering both ears",
-      "The windows down",
-      "Sunglasses"
+      "No, it is illegal to wear headphones or earplugs in both ears while driving",
+      "Yes, as long as the volume is low",
+      "Yes, but only on the highway"
     ],
     correctAnswer: 0,
     explanation: "It is illegal to wear headphones or earbuds covering both ears while driving. One earbud is allowed."
@@ -1818,11 +1786,11 @@ const QUESTIONS = [
   {
     id: "ve_010",
     category: "Vehicle Equipment",
-    question: "Your vehicle registration must be renewed:",
+    question: "You recently purchased a car. How often must you renew your California vehicle registration?",
     options: [
       "Every 5 years",
       "Every year",
-      "Every 2 years"
+      "Only when you sell the vehicle"
     ],
     correctAnswer: 1,
     explanation: "California vehicle registration must be renewed annually."
@@ -1834,9 +1802,9 @@ const QUESTIONS = [
   {
     id: "sc_001",
     category: "Special Driving Conditions",
-    question: "When driving in heavy fog, you should use:",
+    question: "You are driving on a coastal highway early in the morning and encounter a thick patch of fog. You should turn on your:",
     options: [
-      "High beam headlights",
+      "High beam headlights to pierce through the fog",
       "Low beam headlights",
       "Parking lights only"
     ],
@@ -1846,11 +1814,11 @@ const QUESTIONS = [
   {
     id: "sc_002",
     category: "Special Driving Conditions",
-    question: "If it starts to rain after a long dry spell, the road is most slippery:",
+    question: "It has been dry all summer, and it suddenly begins to rain lightly. When is the road surface most slippery?",
     options: [
-      "After it has been raining for an hour",
+      "After it has been raining steadily for several hours",
       "During the first few minutes of rain",
-      "Only if the temperature is below 40°F"
+      "Only if the rain turns to sleet"
     ],
     correctAnswer: 1,
     explanation: "The road is most slippery during the first few minutes of rain because oil and dust on the surface mix with the water."
@@ -1858,11 +1826,11 @@ const QUESTIONS = [
   {
     id: "sc_003",
     category: "Special Driving Conditions",
-    question: "When driving at night, you should:",
+    question: "You are driving at night on a dark country road using your high beams. A car approaches from the opposite direction. When must you dim your lights?",
     options: [
-      "Use high beams at all times",
-      "Dim your high beams when within 500 feet of an oncoming vehicle",
-      "Dim your high beams only when the other driver dims theirs first"
+      "When the approaching vehicle flashes their high beams at you",
+      "When you are within 500 feet of the approaching vehicle",
+      "Only when you are within 100 feet"
     ],
     correctAnswer: 1,
     explanation: "Dim your high beams when within 500 feet of an oncoming vehicle or 300 feet when following another vehicle."
@@ -1870,11 +1838,11 @@ const QUESTIONS = [
   {
     id: "sc_004",
     category: "Special Driving Conditions",
-    question: "When driving in rain, you should:",
+    question: "You are driving in heavy rain on the freeway. To maintain traction and avoid hydroplaning, you should:",
     options: [
-      "Drive in the tire tracks of the car ahead",
-      "Drive faster to avoid being on the road longer",
-      "Stay close to the car in front for better visibility"
+      "Drive in the tire tracks of the vehicle ahead of you",
+      "Drive faster to quickly clear water from your tires",
+      "Drive in the far left lane where water pools least"
     ],
     correctAnswer: 0,
     explanation: "In rain, drive in the tire tracks of the vehicle ahead (where water has been displaced). Increase following distance."
@@ -1882,11 +1850,11 @@ const QUESTIONS = [
   {
     id: "sc_005",
     category: "Special Driving Conditions",
-    question: "What should you do if your headlights hit an animal on the road?",
+    question: "You are driving at night and suddenly see a deer standing in your lane ahead. What is the safest response?",
     options: [
-      "Swerve to avoid it",
-      "Slow down and stop if safe — do not swerve",
-      "Speed up to pass it quickly"
+      "Swerve sharply into the oncoming lane to go around it",
+      "Slow down and stop if safe, maintaining a straight line — do not swerve",
+      "Speed up to try and clear the area before the deer moves"
     ],
     correctAnswer: 1,
     explanation: "Slow down and stop if safe. Do not swerve — you could lose control of your vehicle or hit another car."
@@ -1894,11 +1862,11 @@ const QUESTIONS = [
   {
     id: "sc_006",
     category: "Special Driving Conditions",
-    question: "When driving through deep water on the road, you should:",
+    question: "During a severe storm, you come across a section of road that is flooded with deep water. You should:",
     options: [
-      "Speed up to get through quickly",
-      "Drive slowly through the water, then test your brakes",
-      "Turn around — never drive through flooded areas"
+      "Speed up to maintain momentum through the water",
+      "Drive very slowly through the water, then test your brakes lightly once clear",
+      "Drive on the wrong side of the road if the water looks shallower"
     ],
     correctAnswer: 1,
     explanation: "If you must go through water, drive slowly and test your brakes afterward. If it looks too deep, find an alternate route."
@@ -1906,11 +1874,11 @@ const QUESTIONS = [
   {
     id: "sc_007",
     category: "Special Driving Conditions",
-    question: "When driving on a mountain road, you should:",
+    question: "You are driving on a narrow, winding mountain road where you cannot see at least 200 feet ahead. You should:",
     options: [
-      "Use cruise control",
-      "Keep right on curves and honk on blind turns",
-      "Always drive at the speed limit"
+      "Use cruise control to maintain a steady speed",
+      "Keep to the right edge of your lane and sound your horn",
+      "Drive in the center of the road to avoid edge drop-offs"
     ],
     correctAnswer: 1,
     explanation: "On mountain roads, stay right on curves, use a lower gear going downhill, and honk on blind curves."
@@ -1918,23 +1886,23 @@ const QUESTIONS = [
   {
     id: "sc_008",
     category: "Special Driving Conditions",
-    question: "On a mountain road, when two vehicles meet on a steep road where neither can pass, who must yield?",
+    question: "You are driving uphill on a single-lane mountain road and meet another car coming downhill. There is no room to pass. Who has the right-of-way?",
     options: [
-      "The vehicle going uphill",
-      "The vehicle going downhill must yield and back up",
-      "Neither — they both stop"
+      "The vehicle facing uphill has the right-of-way",
+      "The vehicle facing downhill has the right-of-way",
+      "Whoever honks first has the right-of-way"
     ],
-    correctAnswer: 1,
+    correctAnswer: 0,
     explanation: "The vehicle going downhill must yield and back up because the uphill vehicle has less control."
   },
   {
     id: "sc_009",
     category: "Special Driving Conditions",
-    question: "When driving on wet roads, you should reduce your speed by:",
+    question: "You are driving on a freeway where the speed limit is 65 mph. It starts to rain heavily. By how much should you generally reduce your speed?",
     options: [
-      "5 mph",
-      "About one-third",
-      "Half"
+      "By about 5 mph",
+      "By about one-third",
+      "By half"
     ],
     correctAnswer: 1,
     explanation: "On wet roads, reduce your speed by about one-third. On packed snow, reduce by half. On ice, slow to a crawl."
@@ -1942,11 +1910,11 @@ const QUESTIONS = [
   {
     id: "sc_010",
     category: "Special Driving Conditions",
-    question: "If you must drive in fog and visibility is very poor, you should:",
+    question: "You are driving in dense fog and visibility is near zero. What is the safest course of action?",
     options: [
-      "Pull off the road completely and wait for it to clear",
-      "Use emergency flashers and high beams",
-      "Keep driving slowly"
+      "Pull completely off the road, turn off your lights, and keep your foot off the brake pedal until it clears",
+      "Turn on your hazard lights and continue driving slowly",
+      "Keep driving with your high beams on"
     ],
     correctAnswer: 0,
     explanation: "If fog is too thick to safely drive, pull completely off the road and wait until conditions improve."
@@ -1954,11 +1922,11 @@ const QUESTIONS = [
   {
     id: "sc_011",
     category: "Special Driving Conditions",
-    question: "When driving through a work zone, you should:",
+    question: "You are approaching a highway construction zone where orange cones force traffic into a single lane. You should:",
     options: [
-      "Maintain the posted speed and watch for workers",
-      "Speed up to get through quickly",
-      "Follow closely behind the car ahead"
+      "Maintain the posted construction speed limit and watch for workers",
+      "Speed up to get through the zone as quickly as possible",
+      "Follow closely behind the vehicle ahead to discourage others from cutting in"
     ],
     correctAnswer: 0,
     explanation: "Obey posted speed limits in work zones, watch for workers and equipment, and be prepared to stop."
@@ -1966,11 +1934,11 @@ const QUESTIONS = [
   {
     id: "sc_012",
     category: "Special Driving Conditions",
-    question: "Chains are required on mountain roads when:",
+    question: "You are planning a winter trip to the mountains. When are you legally required to use tire chains?",
     options: [
-      "It is raining",
-      "There is snow or ice on the road and chain controls are in effect",
-      "Temperature drops below 32°F"
+      "Whenever it is raining",
+      "Whenever there is snow or ice on the road and chain controls are posted",
+      "Only when the temperature drops below freezing"
     ],
     correctAnswer: 1,
     explanation: "Chains may be required during winter conditions. Check Caltrans for chain control information."
@@ -1978,11 +1946,11 @@ const QUESTIONS = [
   {
     id: "sc_013",
     category: "Special Driving Conditions",
-    question: "If you are blinded by the headlights of an oncoming vehicle, you should:",
+    question: "You are driving at night and the approaching vehicle forgets to dim their high beams, blinding you. Where should you look to avoid the glare?",
     options: [
-      "Flash your high beams at them",
-      "Look toward the right edge of the road until the vehicle passes",
-      "Close your eyes briefly"
+      "Flash your high beams rapidly to get their attention",
+      "Look toward the right edge of your lane",
+      "Close your eyes briefly until they pass"
     ],
     correctAnswer: 1,
     explanation: "Look toward the right edge of your lane to guide your steering until the oncoming vehicle passes."
@@ -1990,26 +1958,26 @@ const QUESTIONS = [
   {
     id: "sc_014",
     category: "Special Driving Conditions",
-    question: "When is the road surface most slippery?",
+    question: "It is a clear, dry day, but you are approaching an area shaded by trees where the temperature is dropping. What driving hazard should you anticipate in winter?",
     options: [
-      "During a heavy downpour",
-      "During the first few minutes of light rain",
-      "After several hours of rain"
+      "Black ice hiding on the roadway",
+      "Deep puddles of water",
+      "Loose gravel"
     ],
-    correctAnswer: 1,
-    explanation: "The first few minutes of rain are most dangerous because oil and grime on the surface haven't been washed away yet."
+    correctAnswer: 0,
+    explanation: "Shaded areas can hide black ice, a thin layer of ice that is nearly invisible and extremely slippery."
   },
   {
     id: "sc_015",
     category: "Special Driving Conditions",
-    question: "During heavy wind, which vehicles are most at risk?",
+    question: "You are driving a light, high-profile SUV across a bridge on a very windy day. What is the primary hazard you should anticipate?",
     options: [
-      "Low sports cars",
-      "Trucks, RVs, and vehicles towing trailers",
-      "SUVs"
+      "Reduced visibility due to dust",
+      "Strong crosswinds pushing your vehicle out of its lane",
+      "Overheating engine"
     ],
     correctAnswer: 1,
-    explanation: "High-profile vehicles like trucks, RVs, and those towing trailers are most vulnerable to strong crosswinds."
+    explanation: "High-profile vehicles like trucks, RVs, and SUVs are highly vulnerable to strong crosswinds."
   },
 
   // =========================================
