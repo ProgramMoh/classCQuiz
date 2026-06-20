@@ -75,7 +75,7 @@ const SIGN_SVGS = {
   
   flashing_yellow: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#444"/><circle cx="30" cy="75" r="18" fill="#FFD700"><animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/></circle><circle cx="30" cy="115" r="18" fill="#444"/></svg>`,
   
-  greenArrow: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#444"/><circle cx="30" cy="75" r="18" fill="#444"/><circle cx="30" cy="115" r="18" fill="#228B22"/><polygon points="30,100 40,115 35,115 35,128 25,128 25,115 20,115" fill="#fff"/></svg>`,
+  greenArrow: `<svg viewBox="0 0 60 140" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="50" height="130" rx="10" fill="#333" stroke="#555" stroke-width="2"/><circle cx="30" cy="35" r="18" fill="#444"/><circle cx="30" cy="75" r="18" fill="#444"/><circle cx="30" cy="115" r="18" fill="#228B22"/><polygon points="15,115 30,105 30,110 43,110 43,120 30,120 30,125" fill="#fff"/></svg>`,
   
   solidYellowLines: `<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="100" fill="#555"/><line x1="0" y1="48" x2="200" y2="48" stroke="#FFD700" stroke-width="4"/><line x1="0" y1="56" x2="200" y2="56" stroke="#FFD700" stroke-width="4"/><text x="100" y="30" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial">← Opposite traffic →</text><text x="100" y="85" text-anchor="middle" fill="#fff" font-size="12" font-family="Arial">← Opposite traffic →</text></svg>`,
   
