@@ -107,7 +107,14 @@ ul, ol { list-style: none; }
 }
 
 .logo-icon {
-  font-size: 1.4rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  background: var(--accent);
+  color: #000;
+  padding: 3px 5px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 .nav-links {
@@ -253,37 +260,15 @@ ul, ol { list-style: none; }
   margin-bottom: 24px;
 }
 
-/* ---------- Hero / Home ---------- */
-.hero {
-  text-align: center;
-  padding: 40px 0 32px;
+/* ---------- Home ---------- */
+.home-header {
+  padding: 32px 0 20px;
 }
 
-.hero-title {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-
-.hero-title .highlight {
-  color: var(--accent);
-}
-
-.hero-subtitle {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 28px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-actions {
+.home-actions {
   display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
 .stat-grid {

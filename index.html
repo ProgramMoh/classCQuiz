@@ -6,7 +6,7 @@
   <title>CA DMV Class C Practice Test</title>
   <meta name="description" content="Practice for the California Class C driver license knowledge test with quizzes, study mode, and tips for UAE drivers transitioning to California.">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f0b429'/><text x='50' y='62' text-anchor='middle' fill='%23000' font-size='50' font-weight='bold' font-family='Arial'>CA</text></svg>">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <div class="logo" onclick="App.navigate('home')" role="button" tabindex="0" id="logo-home">
-        <span class="logo-icon">🚗</span>
+        <span class="logo-icon">CA</span>
         <span>CA DMV Prep</span>
       </div>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
@@ -34,15 +34,13 @@
 
       <!-- HOME PAGE -->
       <section class="page active" id="page-home">
-        <div class="hero">
-          <h1 class="hero-title">
-            Pass Your <span class="highlight">California DMV</span> Test
-          </h1>
-          <p class="hero-subtitle">Practice with 150+ questions from the official CA Driver Handbook. Built for experienced drivers new to California.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary" onclick="App.navigate('quiz')" id="btn-start-quiz">Start Practice Quiz</button>
-            <button class="btn btn-secondary" onclick="App.navigate('study')" id="btn-start-study">Study All Questions</button>
-          </div>
+        <div class="home-header">
+          <h1 class="page-title">California Class C — Practice Test</h1>
+          <p class="page-subtitle">150+ questions based on the CA Driver Handbook. 46 questions on the real test, 38 correct (83%) to pass.</p>
+        </div>
+        <div class="home-actions">
+          <button class="btn btn-primary" onclick="App.navigate('quiz')" id="btn-start-quiz">Start Quiz</button>
+          <button class="btn btn-secondary" onclick="App.navigate('study')" id="btn-start-study">Study Questions</button>
         </div>
         <div class="stat-grid" id="home-stats">
           <div class="stat-card">
@@ -57,14 +55,6 @@
             <div class="stat-value" id="stat-best">—</div>
             <div class="stat-label">Best Score</div>
           </div>
-        </div>
-        <div class="card mt-24">
-          <h2 style="font-size:1rem;font-weight:700;margin-bottom:8px;">📋 About the DMV Test</h2>
-          <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;">
-            The California Class C knowledge test has <strong>46 questions</strong>. You need at least <strong>38 correct (83%)</strong> to pass. 
-            Questions cover traffic laws, road signs, safe driving, and California-specific rules. Use Quiz mode to simulate the real test, 
-            or Study mode to review all questions and answers at your own pace.
-          </p>
         </div>
       </section>
 

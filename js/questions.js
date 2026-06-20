@@ -2011,6 +2011,250 @@ const QUESTIONS = [
     ],
     correctAnswer: 1,
     explanation: "High-profile vehicles like trucks, RVs, and those towing trailers are most vulnerable to strong crosswinds."
+  },
+
+  // =========================================
+  // ADDITIONAL QUESTIONS — Common on real DMV tests
+  // =========================================
+  {
+    id: "ex_001",
+    category: "Rules of the Road",
+    question: "You are about to make a left turn. You must signal continuously during the last ____ feet before the turn.",
+    options: [
+      "50",
+      "75",
+      "100"
+    ],
+    correctAnswer: 2,
+    explanation: "You must signal continuously during the last 100 feet before turning."
+  },
+  {
+    id: "ex_002",
+    category: "Rules of the Road",
+    question: "You are driving on a two-lane highway and are being followed by several vehicles that want to pass. You should pull over and let them pass when you have ____ or more vehicles following you.",
+    options: [
+      "3",
+      "5",
+      "7"
+    ],
+    correctAnswer: 1,
+    explanation: "On a two-lane highway, if 5 or more vehicles are lined up behind you, you must pull over when safe to let them pass."
+  },
+  {
+    id: "ex_003",
+    category: "Vehicle Equipment",
+    question: "You must notify the DMV within 5 days if you:",
+    options: [
+      "Get a traffic ticket",
+      "Sell or transfer your vehicle",
+      "Change your car insurance company"
+    ],
+    correctAnswer: 1,
+    explanation: "You must notify the DMV within 5 days of selling or transferring ownership of a vehicle."
+  },
+  {
+    id: "ex_004",
+    category: "Rules of the Road",
+    question: "A traffic signal light is not working at an intersection. You should:",
+    options: [
+      "Slow down and proceed with caution",
+      "Come to a complete stop, then proceed when safe",
+      "Wait for a police officer to direct traffic"
+    ],
+    correctAnswer: 1,
+    explanation: "A broken traffic signal should be treated as a four-way stop. Come to a complete stop, then proceed when it is safe."
+  },
+  {
+    id: "ex_005",
+    category: "Safe Driving",
+    question: "Smoking inside a vehicle when a person younger than 18 years of age is present is:",
+    options: [
+      "Legal if the windows are open",
+      "Illegal at all times",
+      "Legal as long as you are the parent"
+    ],
+    correctAnswer: 1,
+    explanation: "It is illegal to smoke in a vehicle when a minor under 18 is present, regardless of whether windows are open."
+  },
+  {
+    id: "ex_006",
+    category: "Rules of the Road",
+    question: "If you have a green light, but traffic is blocking the intersection, you should:",
+    options: [
+      "Enter the intersection and wait for traffic to move",
+      "Stay out of the intersection until you can get completely across",
+      "Honk your horn to warn other drivers"
+    ],
+    correctAnswer: 1,
+    explanation: "Never enter an intersection unless you can get completely through. Blocking an intersection is illegal."
+  },
+  {
+    id: "ex_007",
+    category: "Rules of the Road",
+    question: "You are driving on the freeway. The vehicle in front of you is a large truck. You should drive:",
+    options: [
+      "Closely behind the truck so other drivers cannot cut in",
+      "Farther behind the truck than you would for a passenger vehicle",
+      "To the right side of the truck to be more visible"
+    ],
+    correctAnswer: 1,
+    explanation: "Large trucks have bigger blind spots and need more room to stop. Follow farther behind than you would a passenger vehicle."
+  },
+  {
+    id: "ex_008",
+    category: "Safe Driving",
+    question: "You are getting ready to make a right turn. You should:",
+    options: [
+      "Stop before entering the right lane and let all traffic pass",
+      "Slow down and signal before the turn",
+      "Signal and move into the right lane during the last 100 feet, then turn"
+    ],
+    correctAnswer: 2,
+    explanation: "Signal during the last 100 feet, position yourself in the right lane closest to the curb, then make the turn."
+  },
+  {
+    id: "ex_009",
+    category: "Safe Driving",
+    question: "To see vehicles in your blind spots, you should check:",
+    options: [
+      "Your interior rearview mirror",
+      "Your side mirrors",
+      "Over your shoulder in the direction you want to move"
+    ],
+    correctAnswer: 2,
+    explanation: "Blind spots cannot be seen in any mirror. You must turn your head and look over your shoulder."
+  },
+  {
+    id: "ex_010",
+    category: "Alcohol & Drugs",
+    question: "A driver with a blood alcohol concentration (BAC) of 0.08% or more is considered:",
+    options: [
+      "Legally impaired but not intoxicated",
+      "Under the legal limit",
+      "Legally intoxicated (per se DUI)"
+    ],
+    correctAnswer: 2,
+    explanation: "In California, a BAC of 0.08% or higher is per se DUI — you are legally intoxicated regardless of how you feel."
+  },
+  {
+    id: "ex_011",
+    category: "Rules of the Road",
+    question: "When you park your vehicle on a level road next to a curb, your wheels must be:",
+    options: [
+      "Within 12 inches of the curb",
+      "Within 18 inches of the curb",
+      "Within 24 inches of the curb"
+    ],
+    correctAnswer: 1,
+    explanation: "Your wheels must be within 18 inches of the curb when parking parallel to a curb."
+  },
+  {
+    id: "ex_012",
+    category: "Rules of the Road",
+    question: "Which way do you turn your front wheels when you park facing uphill next to a curb?",
+    options: [
+      "Toward the curb (right)",
+      "Away from the curb (left)",
+      "Straight ahead"
+    ],
+    correctAnswer: 1,
+    explanation: "When parked uphill with a curb, turn your wheels away from the curb (left). If brakes fail, the car rolls into the curb."
+  },
+  {
+    id: "ex_013",
+    category: "Sharing the Road",
+    question: "You are approaching an intersection. A blind person is at the corner ready to cross with a white cane. You must:",
+    options: [
+      "Honk once to let them know you are there",
+      "Stop at the crosswalk and wait for the person to cross",
+      "Drive slowly past them"
+    ],
+    correctAnswer: 1,
+    explanation: "Always stop for blind pedestrians. Do not honk — it may startle or confuse them."
+  },
+  {
+    id: "ex_014",
+    category: "Rules of the Road",
+    question: "You must report any traffic collision to the DMV within 10 days if:",
+    options: [
+      "Your vehicle was damaged",
+      "Anyone was injured or killed, or there was property damage over $1,000",
+      "You received a traffic ticket at the scene"
+    ],
+    correctAnswer: 1,
+    explanation: "File a report (SR-1) with the DMV within 10 days if anyone was injured/killed or property damage exceeds $1,000."
+  },
+  {
+    id: "ex_015",
+    category: "Speed Laws",
+    question: "The speed limit in any business or residential district is ____ mph, unless otherwise posted.",
+    options: [
+      "20",
+      "25",
+      "30"
+    ],
+    correctAnswer: 1,
+    explanation: "The default speed limit in business and residential districts is 25 mph."
+  },
+  {
+    id: "ex_016",
+    category: "Safe Driving",
+    question: "The safest precaution you can take for driving at night is to:",
+    options: [
+      "Use your high beam headlights at all times",
+      "Reduce your speed and increase following distance",
+      "Drive in the left lane"
+    ],
+    correctAnswer: 1,
+    explanation: "At night, reduce speed so you can stop within the distance illuminated by your headlights, and increase following distance."
+  },
+  {
+    id: "ex_017",
+    category: "Rules of the Road",
+    question: "You may drive off the paved roadway to pass another vehicle:",
+    options: [
+      "If the vehicle is turning left",
+      "If the shoulder is wide enough",
+      "Under no circumstances"
+    ],
+    correctAnswer: 2,
+    explanation: "You may never drive off the paved or main-traveled portion of the road to pass."
+  },
+  {
+    id: "ex_018",
+    category: "Sharing the Road",
+    question: "Which of the following is true about large trucks?",
+    options: [
+      "Trucks can stop faster than cars because of their braking systems",
+      "Trucks have larger blind spots than most passenger vehicles",
+      "Trucks always have the right of way on highways"
+    ],
+    correctAnswer: 1,
+    explanation: "Large trucks have extensive blind spots (No-Zones) on all four sides. Avoid lingering in these areas."
+  },
+  {
+    id: "ex_019",
+    category: "Rules of the Road",
+    question: "When you are within 200 feet of a cross street where you plan to turn right, you may drive in a bike lane:",
+    options: [
+      "Never — bike lanes are only for bicycles",
+      "Only if there are no bicyclists in the bike lane",
+      "After checking for and yielding to bicyclists"
+    ],
+    correctAnswer: 2,
+    explanation: "You may enter a bike lane within 200 feet of a right turn, but you must first check for and yield to bicyclists."
+  },
+  {
+    id: "ex_020",
+    category: "Safe Driving",
+    question: "Which of the following is true about road conditions after the first rain in a long time?",
+    options: [
+      "Roads are safest right as rain begins since dust is washed away",
+      "Roads are most slippery during the first few minutes because oil mixes with water",
+      "Rain only makes roads dangerous if it lasts more than an hour"
+    ],
+    correctAnswer: 1,
+    explanation: "The first rain after a dry spell is the most dangerous. Oil and dust mix with water before being washed away, making roads very slippery."
   }
 ];
 

@@ -117,7 +117,7 @@ const Quiz = {
       const isCorrect = answers[currentIndex] === q.correctAnswer;
       explanationHtml = `
         <div class="explanation">
-          <strong>${isCorrect ? '✓ Correct!' : '✗ Incorrect.'}</strong> ${q.explanation}
+          <strong>${isCorrect ? 'Correct.' : 'Incorrect.'}</strong> ${q.explanation}
         </div>`;
     }
 
@@ -213,7 +213,7 @@ const Quiz = {
     const wrongAnswers = results.filter(r => !r.isCorrect);
     if (wrongAnswers.length > 0) {
       reviewHtml = `<div class="review-section">
-        <h3 class="review-section-title">❌ Questions You Got Wrong (${wrongAnswers.length})</h3>`;
+        <h3 class="review-section-title">Questions You Got Wrong (${wrongAnswers.length})</h3>`;
       
       wrongAnswers.forEach((r, idx) => {
         const letters = ['A', 'B', 'C', 'D'];
@@ -236,7 +236,7 @@ const Quiz = {
             <div class="question-text">${r.question.question}</div>
             ${imageHtml}
             <div class="options-list">${optHtml}</div>
-            <div class="explanation"><strong>✓ Correct answer:</strong> ${r.question.explanation}</div>
+            <div class="explanation"><strong>Correct answer:</strong> ${r.question.explanation}</div>
           </div>`;
       });
       reviewHtml += '</div>';
@@ -245,8 +245,8 @@ const Quiz = {
     page.innerHTML = `
       <div class="results-header">
         <div class="results-score ${passed ? 'pass' : 'fail'}">${percentage}%</div>
-        <div style="margin:8px 0"><span class="badge ${passed ? 'badge-pass' : 'badge-fail'}">${passed ? '✓ PASSED' : '✗ FAILED'}</span></div>
-        <div class="results-subtitle">${passed ? 'Great job! You would pass the DMV test.' : 'You need 83% to pass. Keep studying!'}</div>
+        <div style="margin:8px 0"><span class="badge ${passed ? 'badge-pass' : 'badge-fail'}">${passed ? 'PASSED' : 'FAILED'}</span></div>
+        <div class="results-subtitle">${passed ? 'You would pass the DMV test.' : 'You need 83% to pass. Keep studying.'}</div>
       </div>
       <div class="results-stats">
         <div class="result-stat">
